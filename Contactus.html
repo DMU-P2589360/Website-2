@@ -1,0 +1,191 @@
+<!DOCTYPE html> <!--Doc type, tells the user that the type of document is HTML-->
+<html lang="en"> <!--Langauge is in english-->
+<head> <!--Start of Head-->
+<meta charset="UTF-8"> <!--Specificies the specifc coding to be used, web developers are encouraged to use the UTF-8 character set, which covers almost all of the characters and symbols in the world!--> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Tells the browser the width length based on the device used-->
+<title>Contact Us</title> <!-- The title of the page, which is viewed in the search bar-->
+<link rel="stylesheet" href="css/style.css"> <!--Link- links the document to another, rel- shows the page link is the style, the href provides the user with the source -->
+<link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Link to google font-->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Link to google font-->
+<link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet"> <!-- Link to google font-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abel&family=Adamina&display=swap" rel="stylesheet">
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+</head> <!--End of head-->
+<body><!--Start of body containing content of webpage-->
+
+<div class="wrapper"> 
+    <div class="topnav"> 
+        <h1>  Blue Frontier </h1> <!--H1 highest heiracrchy of text-title of website-->
+        
+        <a  href="Home.html">  
+        <button><img src="Images/home.png" alt="Homeicon" class="Icon"> <p >Home</p></button>
+        </a>
+        <a href="Aboutus.html">  
+            <button><img src="Images/Aboutus.png" alt="Homeicon" class="Icon"><p>About Us</p> </button>
+        </a>
+        <a href="Contactus.html">  
+            <button class="active"><img src="Images/Email.png" alt="Homeicon" class="Icon"> <p>Contact Us</p></button>
+        </a>
+        <a href="Meettheteam.html">  
+            <button><img src="Images/teamicon.png" alt="Homeicon" class="Icon"> <p> Meet the Team </p> </button>
+        </a>
+        <a href="OurServices.html">  
+            <button><img src="Images/Icons/Coding.png" alt="Homeicon" class="Icon"> <p>Our Services</p> </button>
+        </a>
+        </div> <!--End of div-->
+<header class="section1C"> 
+    <img id="Marketing" src="Images/Marketing.jpg" alt="Marketing"> <!--Image element-ID given to style it independently,src tells the browser where the image is located, alt given so that if the image doesnt load the user is aware what the image should be-->
+</header>
+
+<header class="map"> 
+<iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317719.5878337057!2d-0.43123593388112746!3d51.528179783248945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon!5e0!3m2!1sen!2suk!4v1709039929504!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> <!--iframe element which links to google map, allowing a interactive map to be displayed-->
+</header>
+
+<div id="contactdetails"> <!--Div containg text-->
+<p>Enquires@bluefrontier.com <!--Paragraph element containg text so the user is aware how to contact team-->
+<br> <!--Page break to create a gap between text on the page-->
+<br> <!--Page break to create a gap between text on the page-->
+<br> <!--Page break to create a gap between text on the page-->
+016645678934
+<br> <!--Page break to create a gap between text on the page-->
+<br> <!--Page break to create a gap between text on the page-->
+<br> <!--Page break to create a gap between text on the page-->
+<p>16 South Walk Close 
+Richardson Industrial Estate
+Leicesterhshire
+United Kingdom</p> <!--Page break to create a gap between text on the page-->
+<div class="socialbar">
+    <a href="https://www.instagram.com/blue_frontier/"><img src="Images/Icons/Instagram.png" alt="Instagram"></a>
+    <a href="https://www.facebook.com/bluefrontiercouk"><img src="Images/Icons/Facebook.png" alt="Facebook"></a>
+    <a href="https://www.tiktok.com/@blue_frontier"><img src="Images/Icons/Tiktok.png" alt="Tiktok"></a>
+    
+</div>
+</div> <!--End of Div-->
+
+<div id="building" class="img">
+
+</div>
+
+<footer id="footerCU"> <!--Footeer containing text-->
+    info@BlueFrontier.com
+    <p> <!--Paragraph element-->
+    Copyright 2024 ©bluefrontier-all rights reserved
+    </p> <!--End of paragraph element-->
+    </footer> <!--End of footer-->
+</div>
+</div> <!--End of div-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/106/three.min.js" integrity="sha512-aqhdrigR8ePLi7IhiGrZz4APv1VktO5eCavRmavrNSk1Ut/s/WVlDwH94SeCqAiM0lm/s8mjtjaDhfevv2Zauw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="./JS/hover.js"></script>
+
+<script>
+var disHover = new hoverEffect ({
+parent:document.querySelector('.img'),
+intensity:0.09,
+image1:'./Images/building.jpg',
+image2:'./Images/building2.jpg',
+displacementImage:'Images/Meet the Team/diss.png'
+})
+function toggleTheme() { 
+        // Obtains an array of all <link> 
+        // elements. 
+        // Select your element using indexing. 
+        var theme = document.getElementsByTagName('link')[0]; 
+
+        // Change the value of href attribute  
+        // to change the css sheet. 
+        if (theme.getAttribute('href') == 'css/style.css') { 
+            theme.setAttribute('href', 'css/purple.css'); 
+        } else { 
+            theme.setAttribute('href', 'css/style.css'); 
+        } 
+    }
+function toggleThemegreen() { 
+        // Obtains an array of all <link> 
+        // elements. 
+        // Select your element using indexing. 
+        var theme = document.getElementsByTagName('link')[0]; 
+
+        // Change the value of href attribute  
+        // to change the css sheet. 
+        if (theme.getAttribute('href') == 'css/style.css') { 
+            theme.setAttribute('href', 'css/green.css'); 
+        } else { 
+            theme.setAttribute('href', 'css/style.css'); 
+        } 
+    }
+function toggleThemepink() { 
+        // Obtains an array of all <link> 
+        // elements. 
+        // Select your element using indexing. 
+        var theme = document.getElementsByTagName('link')[0]; 
+
+        // Change the value of href attribute  
+        // to change the css sheet. 
+        if (theme.getAttribute('href') == 'css/style.css') { 
+            theme.setAttribute('href', 'css/Pink.css'); 
+        } else { 
+            theme.setAttribute('href', 'css/style.css'); 
+        } 
+    }    function increaseFontSizeBy100px() { }
+function toggleThemeyellow() { 
+        // Obtains an array of all <link> 
+        // elements. 
+        // Select your element using indexing. 
+        var theme = document.getElementsByTagName('link')[0]; 
+
+        // Change the value of href attribute  
+        // to change the css sheet. 
+        if (theme.getAttribute('href') == 'css/style.css') { 
+            theme.setAttribute('href', 'css/Yellow.css'); 
+        } else { 
+            theme.setAttribute('href', 'css/style.css'); 
+        } 
+    }    function increaseFontSizeBy100px() { }
+    jQuery(document).ready(function($)
+    {
+        // Set initial zoom level
+        var zoom_level=100;
+
+        // Click events
+        $('#zoomin-btn').click(function() { zoom_page(10, $(this)) });
+        $('#zoomout-btn').click(function() { zoom_page(-10, $(this)) });
+        $('#zoomreset-btn').click(function() { zoom_page(0, $(this)) });
+
+        // Zoom function
+        function zoom_page(step, trigger)
+        {
+            // Zoom just to steps in or out
+            if(zoom_level>=120 && step>0 || zoom_level<=80 && step<0) return;
+
+            // Set / reset zoom
+            if(step==0) zoom_level=100;
+            else zoom_level=zoom_level+step;
+
+            // Set page zoom via CSS
+            $('body').css({
+                transform: 'scale('+(zoom_level/100)+')', // set zoom
+                transformOrigin: '50% 0' // set transform scale base
+            });
+
+            // Adjust page to zoom width
+            if(zoom_level>100) $('body').css({ width: (zoom_level*1.2)+'%' });
+            else $('body').css({ width: '100%' });
+
+            // Activate / deaktivate trigger (use CSS to make them look different)
+            if(zoom_level>=120 || zoom_level<=80) trigger.addClass('disabled');
+            else trigger.parents('ul').find('.disabled').removeClass('disabled');
+            if(zoom_level!=100) $('#zoom_reset').removeClass('disabled');
+            else $('#zoom_reset').addClass('disabled');
+        }
+    });
+
+
+</script>
+
+
+</body> <!--End of Body-->
+</html> <!--End of HTML coding-->

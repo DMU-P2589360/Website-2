@@ -1,0 +1,195 @@
+<!DOCTYPE html> <!--Doc type, tells the user that the type of document is HTML-->
+<html lang="en"> <!--Langauge is in english-->
+<head> <!--Start of Head-->
+<meta charset="UTF-8"> <!--Specificies the specifc coding to be used, web developers are encouraged to use the UTF-8 character set, which covers almost all of the characters and symbols in the world!--> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Tells the browser the width length based on the device used-->
+<title>Our Services</title> <!-- The title of the page, which is viewed in the search bar-->
+<link rel="stylesheet" href="css/style.css"> <!--Link- links the document to another, rel- shows the page link is the style, the href provides the user with the source -->
+<link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Link to google font-->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Link to google font-->
+<link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet"> <!-- Link to google font-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+</head> <!--End of head-->
+<body> <!--Start of body, which contains all elements of webpage-->
+
+<div class="wrapper"> 
+    <div class="topnav"> 
+        <h1>  Blue Frontier </h1> <!--H1 highest heiracrchy of text-title of website-->
+        
+        <a  href="Home.html">  
+        <button><img src="Images/home.png" alt="Homeicon" class="Icon"> <p >Home</p></button>
+        </a>
+        <a href="Aboutus.html">  
+            <button><img src="Images/Aboutus.png" alt="Homeicon" class="Icon"><p>About Us</p> </button>
+        </a>
+        <a href="Contactus.html">  
+            <button><img src="Images/Email.png" alt="Homeicon" class="Icon"> <p>Contact Us</p></button>
+        </a>
+        <a href="Meettheteam.html">  
+            <button><img src="Images/teamicon.png" alt="Homeicon" class="Icon"> <p> Meet the Team </p> </button>
+        </a>
+        <a href="OurServices.html">  
+            <button class="active"><img src="Images/Icons/Coding.png" alt="Homeicon" class="Icon"> <p>Our Services</p> </button>
+        </a>
+        </div> <!--End of div-->
+
+<header> <!--Div containing main image-->
+<img id="computer2" src="Images/Our Services.jpg" alt="Computer2"> <!--Image element-src tells the browser where the image is located, alt given so that if the image doesnt load the user is aware what the image should be-->
+</header> <!--End of Div-->
+
+<header class="socialmedia"> <!--Div containing Icon image-->
+<a href="#socialmedia"><img src="Images/Icons/noun-social-media-5751943.png" alt="sm"> <!--Image element-src tells the browser where the image is located, alt given so that if the image doesnt load the user is aware what the image should be--></a>
+<p id="SocialMediaService"> Social Media </p>
+</header> <!--End of Div-->
+<header class="brand"> <!--Div containing Icon image-->
+<a href="#branddevelopment"><img src="Images/Icons/noun-brand-development-3527490.png" alt="brand"> <!--Image element-src tells the browser where the image is located, alt given so that if the image doesnt load the user is aware what the image should be--></a>
+<p id="SocialMediaService"> Brand Development </p>
+</header> <!--End of Div-->
+<header class="coding"> <!--Div containing Icon image-->
+<a href="#coding"><img src="Images/Icons/Coding.png" alt="coding"> <!--Image element-src tells the browser where the image is located, alt given so that if the image doesnt load the user is aware what the image should be--></a>
+<p id="SocialMediaService"> Coding </p>
+</header> <!--End of Div-->
+
+<div id="socialmedia">
+<img src="Images/Social Media service.jpg" alt="">
+<a id="arrowicon" href="#zoomin-btn"><img src="Images/Icons/Arrow.png" alt=""></a>
+</div>
+
+<div id="branddevelopment">
+<img src="Images/brand development.jpg" alt="">
+<a id="arrowicon2" href="#zoomin-btn"><img src="Images/Icons/Arrow.png" alt=""></a>
+</div>
+
+<div id="coding">
+<img src="Images/coding.jpg" alt="">
+<a id="arrowicon3" href="#zoomin-btn"><img src="Images/Icons/Arrow.png" alt=""></a>
+</div>
+
+<footer id="footerourservices"> <!--Footeer containing text-->
+    info@BlueFrontier.com
+    <p> <!--Paragraph element-->
+    Copyright 2024 ©bluefrontier-all rights reserved
+    </p> <!--End of paragraph element-->
+    </footer> <!--End of footer-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/106/three.min.js" integrity="sha512-aqhdrigR8ePLi7IhiGrZz4APv1VktO5eCavRmavrNSk1Ut/s/WVlDwH94SeCqAiM0lm/s8mjtjaDhfevv2Zauw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="hover-effect.umd.js"> </script>
+    <script src="./JS/app.js"> </script>
+
+    <script>
+new hoverEffect({
+parent:document.querySelector('.wrapperJS'),
+intensity:0.5,
+image1:'./Images/Team.jpg',
+image2:'./Images/Worker.jpg',
+displacementImage:'./Images/Meet the Team/diss.png',
+})  
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+function toggleTheme() { 
+        // Obtains an array of all <link> 
+        // elements. 
+        // Select your element using indexing. 
+        var theme = document.getElementsByTagName('link')[0]; 
+
+        // Change the value of href attribute  
+        // to change the css sheet. 
+        if (theme.getAttribute('href') == 'css/style.css') { 
+            theme.setAttribute('href', 'css/purple.css'); 
+        } else { 
+            theme.setAttribute('href', 'css/style.css'); 
+        } 
+    } 
+function toggleThemegreen() { 
+        // Obtains an array of all <link> 
+        // elements. 
+        // Select your element using indexing. 
+        var theme = document.getElementsByTagName('link')[0]; 
+
+        // Change the value of href attribute  
+        // to change the css sheet. 
+        if (theme.getAttribute('href') == 'css/style.css') { 
+            theme.setAttribute('href', 'css/green.css'); 
+        } else { 
+            theme.setAttribute('href', 'css/style.css'); 
+        } 
+    }
+function toggleThemepink() { 
+        // Obtains an array of all <link> 
+        // elements. 
+        // Select your element using indexing. 
+        var theme = document.getElementsByTagName('link')[0]; 
+
+        // Change the value of href attribute  
+        // to change the css sheet. 
+        if (theme.getAttribute('href') == 'css/style.css') { 
+            theme.setAttribute('href', 'css/Pink.css'); 
+        } else { 
+            theme.setAttribute('href', 'css/style.css'); 
+        } 
+    }    function increaseFontSizeBy100px() { }
+function toggleThemeyellow() { 
+        // Obtains an array of all <link> 
+        // elements. 
+        // Select your element using indexing. 
+        var theme = document.getElementsByTagName('link')[0]; 
+
+        // Change the value of href attribute  
+        // to change the css sheet. 
+        if (theme.getAttribute('href') == 'css/style.css') { 
+            theme.setAttribute('href', 'css/Yellow.css'); 
+        } else { 
+            theme.setAttribute('href', 'css/style.css'); 
+        } 
+    }    function increaseFontSizeBy100px() { }
+    jQuery(document).ready(function($)
+    {
+        // Set initial zoom level
+        var zoom_level=100;
+
+        // Click events
+        $('#zoomin-btn').click(function() { zoom_page(10, $(this)) });
+        $('#zoomout-btn').click(function() { zoom_page(-10, $(this)) });
+        $('#zoomreset-btn').click(function() { zoom_page(0, $(this)) });
+
+        // Zoom function
+        function zoom_page(step, trigger)
+        {
+            // Zoom just to steps in or out
+            if(zoom_level>=120 && step>0 || zoom_level<=80 && step<0) return;
+
+            // Set / reset zoom
+            if(step==0) zoom_level=100;
+            else zoom_level=zoom_level+step;
+
+            // Set page zoom via CSS
+            $('body').css({
+                transform: 'scale('+(zoom_level/100)+')', // set zoom
+                transformOrigin: '50% 0' // set transform scale base
+            });
+
+            // Adjust page to zoom width
+            if(zoom_level>100) $('body').css({ width: (zoom_level*1.2)+'%' });
+            else $('body').css({ width: '100%' });
+
+            // Activate / deaktivate trigger (use CSS to make them look different)
+            if(zoom_level>=120 || zoom_level<=80) trigger.addClass('disabled');
+            else trigger.parents('ul').find('.disabled').removeClass('disabled');
+            if(zoom_level!=100) $('#zoom_reset').removeClass('disabled');
+            else $('#zoom_reset').addClass('disabled');
+        }
+    });
+</script>
+
+</div>
+</body> <!--End of Body-->
+</html> <!--End of HTML coding-->

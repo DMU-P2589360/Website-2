@@ -1,0 +1,197 @@
+<!DOCTYPE html> <!--Doc type, tells the user that the type of document is HTML-->
+<html lang="en"> <!--Langauge is in english-->
+<head> <!--Start of Head-->
+<meta charset="UTF-8"> <!--Specificies the specifc coding to be used, web developers are encouraged to use the UTF-8 character set, which covers almost all of the characters and symbols in the world!--> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Tells the browser the width length based on the device used-->
+<title>Home</title> <!-- The title of the page, which is viewed in the search bar-->
+<link id="theme" rel="stylesheet" href="css/style.css"> <!--Link- links the document to another, rel- shows the page link is the style, the href provides the user with the source -->
+<link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Link to google font-->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Link to google font-->
+<link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet"> <!-- Link to google font-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,100..900;1,100..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+</head> <!--End of head-->
+
+<body> <!--Start of body-contains content of web page-->
+    <div class="wrapper"> <!--Div to contain the entire content of this page, allowing a CSS scroll effect to be created-->    <div class="topnav"> <!-- Class containing all elements for Navigation Menu-->
+<div class="topnav"> 
+<h1>  Blue Frontier </h1> <!--H1 highest heiracrchy of text-title of website-->
+<a  href="Home.html">  
+<button class="active"><img src="Images/home.png" alt="Homeicon" class="Icon"> <p >Home</p></button>
+</a>
+<a href="Aboutus.html">  
+    <button><img src="Images/Aboutus.png" alt="Homeicon" class="Icon"><p>About Us</p> </button>
+</a>
+<a href="Contactus.html">  
+    <button><img src="Images/Email.png" alt="Homeicon" class="Icon"> <p>Contact Us</p></button>
+</a>
+<a href="Meettheteam.html">  
+    <button><img src="Images/teamicon.png" alt="Homeicon" class="Icon"> <p> Meet the Team </p> </button>
+</a>
+<a href="OurServices.html">  
+    <button><img src="Images/Icons/Coding.png" alt="Homeicon" class="Icon"> <p>Our Services</p> </button>
+</a>
+</div> <!--End of div-->
+</div> <!--End of div-->
+
+<div class="Serviceshome"> <!--Div-contating particular text and image-->
+<img id="Team"  src="Images/Company.jpg" alt="Team"> <!--Image element-ID given to style it independently,src tells the browser where the image is located, alt given so that if the image doesnt load the user is aware what the image should be-->
+<P id="topcompany"> TOP COMPANY OF THE YEAR</P> <!--Paragraph element- Contains text informing the viewer about the company-->
+</div> <!--End of Div-->
+
+<div> <!--Div-contating particular text and image-->
+<img id="Serviceshome" src="Images/Ladycomputer.jpg" alt="Computer"> <!--Image element-ID given to style it independently,src tells the browser where the image is located, alt given so that if the image doesnt load the user is aware what the image should be-->
+<p id="Upgrade">UPGRADE YOUR BUSINESS TODAY!</p><!--Paragraph element- Contains text informing the viewer about the company-->
+</div> <!--End of Div-->
+      
+<div id="fonttext"> <!--Div-contating particular text and image-->
+<img id="Services2" src="Images/New/Work.jpg" alt="Computer"> <!--Image element-ID given to style it independently,src tells the browser where the image is located, alt given so that if the image doesnt load the user is aware what the image should be-->
+<p id="topquality">TOP QUALITY SERVICE PROVIDED!</p><!--Paragraph element- Contains text informing the viewer about the company-->
+</div> <!--End of Div-->
+      
+<div id="fonttext"> <!--Div-contating particular text and image-->
+<img id="Services3" src="Images/Social Media.jpg" alt="Computer"> <!--Image element-ID given to style it independently,src tells the browser where the image is located, alt given so that if the image doesnt load the user is aware what the image should be-->
+<p id="SocialMedia">GET NOTICED ON SOCIAL MEDIA!</p><!--Paragraph element- Contains text informing the viewer about the company-->
+</div> <!--End of Div-->
+
+<div> <!--Div-contating particular text and image-->
+<img id="Services4" src="Images/Team new.jpg" alt="Computer"> <!--Image element-ID given to style it independently,src tells the browser where the image is located, alt given so that if the image doesnt load the user is aware what the image should be-->
+<p id="team">WORK WITH OUR AMAZING TEAM!</p> <!--Paragraph element- Contains text informing the viewer about the company-->
+</div> <!--End of Div-->
+
+<header class="home"> <!--Header-Containing further elements of the page, header allows them to be styled easily-->
+<img class="background" src="Images/Tables.jpg" alt="Team"> <!--Image element-ID given to style it independently,src tells the browser where the image is located, alt given so that if the image doesnt load the user is aware what the image should be-->
+<h1 class="title"> FIND OUT MORE BELOW! </h1> <!--H1 highest heiracrchy of text-title of text-->
+<div class="card"> 
+    <img class="background" src="Images/New/Team2.jpg" alt="Team">
+     <div class="card-body">
+       <p class="card-info"> Blue Frontier is a full service digital agency located in Salisbury, Southampton & Bristol.
+    
+        We are a team of professional designers, developers, marketers and IT specialists combining our knowledge and expertise to create exceptional designs and strategies, tailored to your business’s needs and requirements.
+        
+        Tell us about your goal and we’ll show you how you can achieve it. Whatever your project, we’d love to be involved. </p>
+       
+       <a href="./OurServices.html"> <button class="card-button">Our Services</button>
+     </a>
+    </div>
+</div>
+</header> <!--End of header-->
+
+<footer> <!--Footeer containing text-->
+info@BlueFrontier.com
+<p> <!--Paragraph element-->
+Copyright 2024 ©bluefrontier-all rights reserved
+</p> <!--End of paragraph element-->
+</footer> <!--End of footer-->
+    
+</div> <!--End of Div-->
+</div>
+</div>
+
+<script>
+    function colorSelected (element) {
+    document.body.style.background = element.value
+}
+    function toggleTheme() { 
+        // Obtains an array of all <link> 
+        // elements. 
+        // Select your element using indexing. 
+        var theme = document.getElementsByTagName('link')[0]; 
+
+        // Change the value of href attribute  
+        // to change the css sheet. 
+        if (theme.getAttribute('href') == 'css/style.css') { 
+            theme.setAttribute('href', 'css/purple.css'); 
+        } else { 
+            theme.setAttribute('href', 'css/style.css'); 
+        } 
+    } 
+    function toggleThemegreen() { 
+        // Obtains an array of all <link> 
+        // elements. 
+        // Select your element using indexing. 
+        var theme = document.getElementsByTagName('link')[0]; 
+
+        // Change the value of href attribute  
+        // to change the css sheet. 
+        if (theme.getAttribute('href') == 'css/style.css') { 
+            theme.setAttribute('href', 'css/green.css'); 
+        } else { 
+            theme.setAttribute('href', 'css/style.css'); 
+        } 
+    }
+        function toggleThemepink() { 
+        // Obtains an array of all <link> 
+        // elements. 
+        // Select your element using indexing. 
+        var theme = document.getElementsByTagName('link')[0]; 
+
+        // Change the value of href attribute  
+        // to change the css sheet. 
+        if (theme.getAttribute('href') == 'css/style.css') { 
+            theme.setAttribute('href', 'css/Pink.css'); 
+        } else { 
+            theme.setAttribute('href', 'css/style.css'); 
+        } 
+    }    function increaseFontSizeBy100px() { 
+    }
+    function toggleThemeyellow() { 
+        // Obtains an array of all <link> 
+        // elements. 
+        // Select your element using indexing. 
+        var theme = document.getElementsByTagName('link')[0]; 
+
+        // Change the value of href attribute  
+        // to change the css sheet. 
+        if (theme.getAttribute('href') == 'css/style.css') { 
+            theme.setAttribute('href', 'css/Yellow.css'); 
+        } else { 
+            theme.setAttribute('href', 'css/style.css'); 
+        } 
+    }    function increaseFontSizeBy100px() { 
+    }
+    jQuery(document).ready(function($)
+    {
+        // Set initial zoom level
+        var zoom_level=100;
+
+        // Click events
+        $('#zoom_in').click(function() { zoom_page(10, $(this)) });
+        $('#zoom_out').click(function() { zoom_page(-10, $(this)) });
+        $('#zoom_reset').click(function() { zoom_page(0, $(this)) });
+
+        // Zoom function
+        function zoom_page(step, trigger)
+        {
+            // Zoom just to steps in or out
+            if(zoom_level>=120 && step>0 || zoom_level<=80 && step<0) return;
+
+            // Set / reset zoom
+            if(step==0) zoom_level=100;
+            else zoom_level=zoom_level+step;
+
+            // Set page zoom via CSS
+            $('body').css({
+                transform: 'scale('+(zoom_level/100)+')', // set zoom
+                transformOrigin: '50% 0' // set transform scale base
+            });
+
+            // Adjust page to zoom width
+            if(zoom_level>100) $('body').css({ width: (zoom_level*1.2)+'%' });
+            else $('body').css({ width: '100%' });
+
+            // Activate / deaktivate trigger (use CSS to make them look different)
+            if(zoom_level>=120 || zoom_level<=80) trigger.addClass('disabled');
+            else trigger.parents('ul').find('.disabled').removeClass('disabled');
+            if(zoom_level!=100) $('#zoom_reset').removeClass('disabled');
+            else $('#zoom_reset').addClass('disabled');
+        }
+    });
+
+   </script>
+
+
+</body> <!--End of body-->
+</html><!--End of HTML coding-->
