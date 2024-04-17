@@ -1,0 +1,1743 @@
+/*All Pages*/
+body { 
+background-color: white; /*sets the background colour for all pages*/
+height: 100vh; /*sets the height of all pages to ensure all are consistent*/
+margin: 0; /*margin set to 0 to ensure content is spaced correctly on page */
+}
+h1 { /*H1 Highest heirachy forming the tile of the page*/
+text-align: center; /*Informs the browser to align the text in the center*/
+font-family: "Aboreto", system-ui; /*The font family designated and chosen was "Aberto"*/
+color: darkgray; /*The color of text was chosen as white*/
+font-size: 7em; /*The font size was selected as 7em making the title bigger than all subsequent text*/
+padding: 60px; /*The Padding was set at 60px ensuring there was gap surrounding the text*/
+margin:0; /*The margin was set to 0 to ensure the title correctly on page */
+margin-bottom: -2%;
+}
+.topnav button.active { /*Styling for the button of the page which is active*/
+background-color: darkgrey;/*The background colour was set to light to differentiate it from the other buttons */
+color: white; /*The text colour was set too white to make the text stand out */
+}
+.colourpicker{ /*Styling for colour picker which allows users to select the background colour*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/
+right:12%; /*The picker was positioned 7% of the page in from the right*/
+top:3%; /*The picker was positioned 3% of the page in from the left*/
+color:black; /*The font was set as black so the text can be differentiated from the background colour*/
+font-size: 1.5rem; /*The font size was set at 0.5rem to make it fit according to the size of div*/
+background-color: white; /*The background colour was set to white to match the other buttons incorporated within the navigation bar*/
+padding:20px; /*The Padding was set at 20px ensuring there was gap surrounding the text*/
+border-radius: 20px; /*Border Radius set at 20px to round the edges of the shape*/
+}
+a {
+text-decoration: none; /*Ensures no decoration is displayed*/
+}
+li {
+list-style-type: none;
+}
+/*Styling of colour theme selection dropwdown*/
+.menu { /*Styling of anchor element*/
+text-decoration: none; /*Removes hyperlink styling from the text, allowing it to be styled alternativel*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/
+top:0; /*Sets the colour selection dropddown at the top of the page*/
+}
+ul { /*Styling of list contained within dropdown, which lists all available colour themes*/
+list-style-type: none; /*Removes the bullet points from the list*/
+}
+.menu-tile { /*Styling of the button title which activates the dropdown*/
+color:white; /*Sets the title of the dropdown to white*/
+}
+h2 { /*Styling of the title which tells user what they need to do with the dropdown*/
+color:black; /*Styles the text of the colour selection button*/
+background-color: white; /*Background colour set to white to match the navigation bar*/
+padding: 20px;  /*The Padding was set at 20px ensuring there was gap surrounding the text*/
+border-radius: 20px; /*Border-radius was set to 20px to round the edges of the text*/
+font-size: 1.8rem; /*Font size set to 1.8rem to style it correctly for the size of the button*/
+}
+.dropdown { /*Styling of div which contains the dropdown elements-positioning*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/
+top:0%; /*The dropdown was position at the top, to ensure the content is positioned correctly on the page*/
+right:10%; /*The dropdown was positioned 10% in from the right of the page to position it correctly in relation to the colour picker*/
+}
+.menu-dropdown { /*Styling of the list/menu which dropdown*/
+min-width: 100%; /*Min width set to 100%-to ensure its width doesn't increase further than this*/
+padding: 15px; /*Padding set to 15px to ensure there is gap surrounding the text*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/
+background: white; /*Background set as white to incorporate the other elments within the navigation bar*/
+z-index: 100; /*Z Index set to 100 to ensure it layers above other elements on the page*/
+transition:0.5s padding,0.5s background; /*A transition was applied to ensure the the dropdown appearing happened smoothly for the user*/
+color: black; /*The color of the text is set to black to make it stand out from the background and incorporate other colour of text*/
+box-shadow: 2px 2px 2px 2px black; /*A box shadow was applied to make the dropdown standout from the other elements on the navigation menu-particularly in terms of accessibility*/
+}
+.menu-dropdown li { /*Styling of the lsit which is incorporated within the dropdown*/
+font-size: 2em; /*Font Size set to 2em, appropriate font for element inside- em allows the font to react to resposiveness*/
+padding:20px; /*Padding set at 20px to ensure there is a gap surrounding text*/
+}
+.menu:not(:hover) > .menu-dropdown { /*Styling of how the dropdown appears before the user hovers over the button to activate it*/
+padding: 4px; /*Padding set to 4px so there is a gap to surrounding elements*/
+background: white; /*Background was set to the white to match the actual drop down menu and other elements within the navigation bar*/
+z-index: 99; /*Index set to 99 so it appears above other elements on the page*/
+}
+.menu-dropdown > * { /*Styling of dropdown transition*/
+overflow: hidden; /*Overflow hidden ensures the correct elements appear on the page*/
+height: 30px; /*Height set at 30px to ensure the dropdown is the correct height*/
+padding: 5px; /*Padding set to 5px to ensure there is a gap between surrounding elements*/
+background: white; /*Background set as white match all elements of the dropdown and other elements of the navigation menu*/
+white-space: nowrap; /*white-space property specifies how white-space inside an element is handled-no wrap limits alteration*/
+transition: /*Transition settings*/
+0.5s height cubic-bezier(.73,.32,.34,1.5), /*seconds defines how long that particular element of the transistion should take,cubic bezier defines the start and end state of element-the height of the dropdown is altered here*/
+0.5s padding cubic-bezier(.73,.32,.34,1.5), /*seconds defines how long that particular element of the transistion should take,cubic bezier defines the start and end state of element-the padding of the dropdown is altered here*/
+0.5s margin cubic-bezier(.73,.32,.34,1.5), /*seconds defines how long that particular element of the transistion should take,cubic bezier defines the start and end state of element-the margin of the dropdown is altered here*/
+0.5s 0.2s color, /*seconds defines how long that particular element of the transistion should take*/
+0.2s background-color; /*seconds defines how long that particular element of the transistion should take*/
+}
+.menu-dropdown > *:hover {
+background: white; /*Background set to white to match other elements of the dropdown and navigation menu*/
+}
+.menu:not(:hover) > .menu-dropdown > * { /*Settings which hide the visability of the dropdown before a user hovers over*/
+visibility: hidden; /*Hides the text until dropdown appears*/
+height: 0; /*Reduces the height of the dropdown until users hovers over*/
+padding-top: 0; /*Padding set to 0 to set no gap between elements*/
+padding-bottom: 0; /*Padding set to 0 to set no gap between elements*/
+margin: 0; /*Margin set to 0 to set no gap between other elements on the page*/
+transition: /*Animation of dropdown*/
+0.5s 0.1s height, /*Transition of height*/
+0.5s 0.1s padding, /*Transition of padding*/
+0.5s 0.1s margin, /*Transition of margin*/
+0.3s color, /*Transition of color*/
+0.6s visibility; /*Transition of visability*/
+z-index: 99; /*Z index set to 99 to ensure it is visable in comparison to other elements on the page*/
+}
+#purple:hover {
+background-color: purple; /*When the user hovers over the purple colour it will turn purple so they are aware the colour they are selecting-particualarly important in terms of accessibility*/
+color: white; /*Colour turned to white so it is more visable for the user*/
+}
+#green:hover {
+background-color: green; /*When the user hovers over the green colour it will turn green so they are aware the colour they are selecting-particualarly important in terms of accessibility*/
+}
+#Yellow:hover {
+background-color: orange; /*When the user hovers over the green colour it will turn green so they are aware the colour they are selecting-particualarly important in terms of accessibility*/
+}
+#Pink:hover {
+background-color: pink; /*When the user hovers over the green colour it will turn green so they are aware the colour they are selecting-particualarly important in terms of accessibility*/
+}
+input {  /*Styling of the colour picker selector*/
+width:50%; /*Width set to 50%-making it approproate size for the user and other content on the page*/
+text-decoration: none; /*text-decoration set to none so no hyperlink style appears*/
+border: 0; /*Border set to 0 so no border is present*/
+padding: 0; /*Padding set to 0 so the whole element can be seen clearly*/
+margin: 0; /*Margin set to 0 to ensure no alteration of positioning*/
+background: transparent; /*Background set to transparent to ensure no background colour is selected*/
+border-radius: 100px; /*Border Radius set to 100px to round the edges*/
+}
+input:hover { /*Styling of when user hovers over colour picker selector*/
+opacity: 80%; /*Opacity reduced to 80%-making it clear to the user they are hovering over that element*/
+scale:1.1; /*Scale set to 1.1 so that the element increases in scale-informing the user the element they are hovering over-particularly important in terms of accessibility*/
+} 
+#zoomin-btn{ /*Styling of zoom in*/
+width: 4%; /*width was set as 4%- width set in relation to the icon and other elements on the page*/
+border-radius: 80px; /*Border radius set to 80px to round the edges*/
+top:0%; /*Top:0%-sets it to the top of the page*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/
+left:5%; /*The button was positioned to left of the navigation bar*/
+height: 8%; /*The height was set as 8% to correctly size the image in proportion to its width and other elements on the page*/
+}
+#zoomin-btn img {
+width:110%; /*The width of img inside the button was set at 100% to ensure the image filled the button*/
+}
+#zoomin-btn:hover { /*Styling of Zoom In Button on hover*/
+background-color: lightgray; /*The background colour of the btn was changed to light grey to differentiate from the normal button*/
+outline: none ; /*Outline was set to none so no outline was visable*/
+}
+#zoomout-btn{
+width: 4%; /*width was set as 4%- width set in relation to the icon and other elements on the page*/
+border-radius: 80px; /*Border radius set to 80px to round the edges*/
+top:0%; /*Top:0%-sets it to the top of the page*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/
+left:10%; /*The button was positioned to left of the navigation bar*/
+height: 8%; /*The height was set as 8% to correctly size the image in proportion to its width and other elements on the page*/
+}
+#zoomout-btn img {
+width:90%; /* Zoom reset image was set as 90% to ensure the image was the correct proportion within the button*/
+}
+#zoomout-btn:hover {
+background-color: lightgray; /*The background colour of the btn was changed to light grey to differentiate from the normal button*/
+outline: none ; /*Outline was set to none so no outline was visable*/
+}
+#zoomreset-btn{
+width: 4%; /*width was set as 4%- width set in relation to the icon and other elements on the page*/
+border-radius: 80px; /*Border radius set to 80px to round the edges*/
+top:0%; /*Top:0%-sets it to the top of the page*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/
+left:0; /*The button was positioned to left of the navigation bar*/
+height: 8%; /*The height was set as 8% to correctly size the image in proportion to its width and other elements on the page*/
+}
+#zoomreset-btn img {
+width:90%; /* Zoom reset image was set as 90% to ensure the image was the correct proportion within the button*/
+}
+#zoomreset-btn:hover {
+background-color: lightgray; /*The background colour of the btn was changed to light grey to differentiate from the normal button*/
+outline: none ; /*Outline was set to none so no outline was visable*/
+}
+.topnav { /*Styling of Navigation Bar*/
+outline: none; /*Outline was set to none so there was no outline to the navigation bar*/
+background-color: lightblue; /*The background colour was set to lightblue to match the inital colour theme of the company*/
+height: 400px; /*Height was set to 400px so the bar only takes up the upper half of the page*/
+margin: auto; /*Margin set to auto so the margin is dependent on other elements of the page*/
+font-family: "Aboreto", system-ui; /*The font family is set as "Abereto" -the chosen font to match the theme of the company*/
+font-style: normal; /*Font style was set to normal so not bold and not too light*/
+width: 100%; /*The width was set as 100% so it takes up 100% of the page*/
+}
+.topnav button { /*Styling of the buttons as part of the navigation bar*/
+background-color: lightgray; /*The background colour was set as white to match the colour theme*/ 
+border-radius: 12px; /*The border radius was set as 12px to round the edges of the button*/
+width: 11%; /*The width was set as 310px to ensure they are the correct width in proportion to the other buttons and other elements on the page*/
+height: 32%; /*The height was set as 120px to ensure it is the correct proportion in relation to the set width and other elements on the page*/
+outline-color: white; /*The outline colour was set to white to ensure the outline is not noticable due to an additional hover being applied on hover*/
+border: none; /*Border was set to none so there is no border set surrounding the button*/
+margin-right: 150px; /*A margin was set to the right at 150px to ensure there is an equal distance between the buttons*/
+margin-left: 100px; /*A margin was set to the left at 100px to ensure there is an equal distance between the buttons*/
+text-decoration: none; /*Text decoration is set to none to ensure there is no text decoration applied to the text*/
+color: white; /*The colour of the text was set to black to ensure it is differentiatable from the buttons*/
+font-size: 1.5rem; /*The font size was set 1.5rem to ensure the font size of the buttons is proportioned correctly in relation to the size of the buttons and other text/elements on the page*/
+font-family: "Aboreto", system-ui; /*The font family is set as "Abereto" -the chosen font to match the theme of the company*/
+font-style: normal; /*Font style was set to normal so not bold and not too light*/
+outline:0; /*The outline was set as 0 to ensure there is no outline surrounding the button*/
+padding:20px; /*The Padding was set at 20px ensuring there was gap surrounding the text*/
+margin-top: 1%; /*A margin was set at the top at 50px to ensure the buttons are proportioned correctly in relation to the Title of the website*/
+cursor: pointer; /*The cursor pointer property informs the browser to dipslay the pointer when the user hovers over the element*/
+}
+.topnav button p {
+margin: 0; /*Margin set to 0 to ensure the text within the button is positioned correctly*/
+}
+
+/* Styling of Icons within Navigation Bar */
+.Icon { 
+width:68px; /*Width adjusted to 40px to make it correct size in relation to text and menu */
+height: 58px; /*Height adjusted to 40px to make it correct size in relation to text and menu */
+padding-bottom: 7px; /*Padding bottom set to 7px so there is a gap between the image and bottom of the the button*/
+}
+.topnavbutton {
+position: absolute;/*Position absolute allows you to adjust the position of the element on the page*/ 
+}
+
+/*Home Page*/
+#Team { /*Styling of Team Image on Home Page*/
+width: 50%; /*Width was set 1400 to size it in proportion to the page and other element on the page*/
+height: 55%; /*Height set to 56% to adjust it according to the assigned width*/
+left: 2%; /*Positioned 2% of the left of the page so that it posiioned correctly on the page in relation to other element son the page*/
+top: 30%; /*Image positioned 30% from the top of the page to ensure the image was positoned below the navigation bar*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+animation-name: opacity; /*The image was applied the animation of opacity so the images fades using opacity settings*/
+animation-duration: 4s; /*The duration was set 4seconds so the animation commenences for the correct duration required*/
+}
+#topcompany { /*Styling of top company text*/
+font-size: 3rem; /*The font was set as 3rem to ensure it was correct size dimensions in relation to the size of image and other elements on the page*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+left: 2%; /*Positioned 2% of the left of the page so that it posiioned correctly on the page in relation to other element son the page*/
+top: 84%; /*Top was set at 84% to ensure it was positioned correctly on the page in relation to other elements*/
+color: black; /*Colour set to black to differentiate from background colour*/
+text-align: center; /*Text align center was applied to ensure text is displayed centrally*/
+width: 1400px; /*The width of the image was set at 1400px to ensure consistency in size*/
+animation-name: opacity; /*Animation opacity was applied to generate a fade effect by the alteration of opacity settings*/
+animation-duration: 4s;  /*The duration was set 4seconds so the animation commenences for the correct duration required*/
+font-weight:bolder; /*Font weight set to bolder to make the text stand out further*/
+font-family: "Aboreto", system-ui; /*The font family designated and chosen was "Aberto"*/
+}
+#Team:hover {
+opacity: 80%;
+}
+/*Styling of Services Image on Home Page*/
+#Serviceshome {
+width: 550px; /*The width was set at 550px to ensure the image was the correct size in relation to other elements on the page*/
+height: 350px; /*The height was set at 350px to ensure the image was the correct size in relation to other elements on the page*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+left: 55%; /*Left was set at 55% of the page*/
+top: 30%; /*The top was set as 30% to ensure it was placed below under the navigation bar*/
+animation-name: opacity; /*The animation of opacity was applied to create the effect of a fade in*/
+animation-duration: 4s; /*The duration was set 4seconds so the animation commenences for the correct duration required*/
+}
+#Upgrade {
+font-size: 2rem; /*The font size was set at 2rem to ensure it is the correct proportion in relation to the image and other text on the page*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+left: 55%; /*The text was positioned to the left of the 55%*/
+top: 53%; /*The text was positioned 53% at the top of the page to position correctly on the page in relation to the image*/
+color: black; /*Colour set to black to ensure it is fully visible for the user*/
+text-align: center; /*Text-align center was applied to make sure the text is aligned within the center*/
+width: 550px; /*The width was set at 550px to ensure the image was the correct size in relation to other elements on the page*/
+animation-name: opacity; /*The animation of opacity was applied to ensure a fade in effect is applied*/
+animation-duration: 4s; /*The duration was set 4seconds so the animation commenences for the correct duration required*/
+font-weight:bolder; /*Font weight set to bolder to make the text stand out further*/
+font-family: "Aboreto", system-ui; /*The font family designated and chosen was "Aberto"*/
+}
+#Services2 {
+width: 550px; /*The width was set at 550px to ensure the image was the correct size in relation to other elements on the page*/
+height: 350px; /*The height was set to 350px to ensure the image is the correct proportion in relation to other images and the width*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+left: 55%; /*The image was positioned left 55% of the page to position is according to the other images on the page*/
+top: 60%; /*The image was positioned 60% of the top of the page-to positioned correctly in relation to ither images and text on the page*/
+animation-name: opacity; /*The animation opacity was applied to create a fade in effect*/
+animation-duration: 4s; /*The duration was set 4seconds so the animation commenences for the correct duration required*/
+}
+#topquality{
+font-size: 2rem; /*The font-size of 2em was applied to ensure it is the right font size in relation to the size of the image and other elements on the page*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+left: 55%; /*The image was positioned 55% of the left of the page to ensure it positioned correctly in relation to the other images and text on the page*/
+top: 84%; /*The image was positioned 84% of the top of the page to ensure it positioned correctly in relation to the other images and text on the page*/
+color: black; /*The colour black was applied to ensure the text is visable for all users*/
+text-align: center; /*The text-align was set to center to position the text centerally*/
+width: 550px; /*The width was set at 550px to ensure the image was the correct size in relation to other elements on the page*/
+animation-name: opacity; /*The animation name of opacity was applied to create a fade in effect*/
+animation-duration: 4s; /*The duration was set 4seconds so the animation commenences for the correct duration required*/
+font-weight:bolder; /*Font weight set to bolder to make the text stand out further*/
+font-family: "Aboreto", system-ui; /*The font family designated and chosen was "Aberto"*/
+}
+#Services3 {
+width: 550px; /*The width was set at 550px to ensure the image was the correct size in relation to other elements on the page*/
+height: 350px; /*The height was set at 350px to ensure the image was the correct size in relation to the the width of the image and other elements on the page*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+Right: 2%; /*The image was positioned 2% to the right of the page, to position it correctly in relation other images and elements on the page*/
+top: 60%; /*The image was positioned 60% of the the top of the page, to position it correctly in relation other images and elements on the page*/
+animation-name: opacity; /*The animation opacity was applied to generate a fade in effect*/
+animation-duration: 4s; /*The duration was set 4seconds so the animation commenences for the correct duration required*/
+}
+#SocialMedia{
+font-size: 2rem; /*The font-size of 2em was applied to ensure it is the right font size in relation to the size of the image and other elements on the page*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+right:2%;  /*The image was positioned 2% of the right of the page to ensure it positioned correctly in relation to the other images and text on the page*/
+top: 84%;  /*The image was positioned 84% of the top of the page to ensure it positioned correctly in relation to the other images and text on the page*/
+color: black; /*The colour black was applied to ensure the text is visable for all users*/
+text-align: center; /*The text-align was set to center to position the text centerally*/
+width: 550px; /*The width was set at 550px to ensure the image was the correct size in relation to other elements on the page*/
+animation-name: opacity; /*The animation name of opacity was applied to create a fade in effect*/
+animation-duration: 4s; /*The duration was set 4seconds so the animation commenences for the correct duration required*/
+font-weight:bolder; /*Font weight set to bolder to make the text stand out further*/
+font-family: "Aboreto", system-ui; /*The font family designated and chosen was "Aberto"*/
+}
+#Services4 {
+width: 550px; /*The width was set at 550px to ensure the image was the correct size in relation to other elements on the page*/
+height: 350px; /*The height was set at 350px to ensure the image was the correct size in relation to the the width of the image and other elements on the page*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+Right: 2%; /*The image was positioned 2% to the right of the page, to position it correctly in relation other images and elements on the page*/
+top: 30%; /*The image was positioned 30% of the the top of the page, to position it correctly in relation other images and elements on the page*/
+animation-name: opacity; /*The animation opacity was applied to generate a fade in effect*/
+animation-duration: 4s; /*The duration was set 4seconds so the animation commenences for the correct duration required*/
+}
+#team {
+font-size: 2rem; /*The font-size of 2em was applied to ensure it is the right font size in relation to the size of the image and other elements on the page*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+right: 2%; /*The image was positioned 2% of the left of the page to ensure it positioned correctly in relation to the other images and text on the page*/
+top: 53%; /*The image was positioned 53% of the top of the page to ensure it positioned correctly in relation to the other images and text on the page*/
+color: black; /*The colour black was applied to ensure the text is visable for all users*/
+text-align: center; /*The text-align was set to center to position the text centerally*/
+width: 560px; /*The width was set at 560px to ensure the image was the correct size in relation to other elements on the page*/
+animation-name: opacity; /*The animation name of opacity was applied to create a fade in effect*/
+animation-duration: 4s; /*The duration was set 4seconds so the animation commenences for the correct duration required*/
+font-weight:bolder; /*Font weight set to bolder to make the text stand out further*/
+font-family: "Aboreto", system-ui; /*The font family designated and chosen was "Aberto"*/
+}
+.card {
+width: 100%; /*The width was set at 100% to ensure the text filled the ensure width of the page*/
+height:100%; /*The height was set a 100% to ensure the full height of the car was displayed on the page*/
+overflow: hidden; /*Overflow was set to hidden to ensure the content isnt displayed until the user hovers over the card*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+top:120%; /*The card was positioned at 120% of the top the page to position it correctly in relation to other elements on the page*/
+transform-style: preserve-3d; /*Transform-style preserve-3d was applied to ensure the .card displays a 3d effect during parallex scroll*/
+width: 100%; /*The width was set at 100% to ensure the text filled the ensure width of the page*/
+left: 0%; /*Left set to 0 so no gap at the left of the page*/
+}
+.card img {
+width:100%; /*The width was set at 100% to ensure the card filled the ensure width of the page*/
+height: 100%;  /*The height was set at 100% to ensure the card filled the correct proportion of the page*/
+object-fit: cover; /*Object cover was applied to ensure the card covered the entire page*.
+border-radius: 15px; /*A border radius of 15px was applied to round the edges of the card*/
+transform: translateZ(-10px) scale(1); /*The transform:transform translate z was applied to create a parallex effect by adjusting the z property, scale 1 was applied to ensure the card doesnt increase in size*/
+}
+.card-body { /*Styling and positioning of card content*/
+width:100%; /*The width was set at 100% to ensure the text filled the ensure width of the card*/
+height: 100%; /*The height was set at 100% to ensure the text filled the ensure width of the card*/ 
+top:0; /*The card body was positioned at the top of 0 so there is no gap between the content and the top of the card*/
+right:-100%; /*The body was positioned right -100% to ensure the content was positioned correctly within the card*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+background: #00679e; /*Background colour of light blue applied to match colour scheme and other elements on the page*/
+border-radius: 15px; /*Border radius of 15px applied to round the edges of the card*/
+color: black; /*Colour white applied to text to ensure it is visible to users and to match colour theme*/
+padding:50px; /*The Padding was set at 50px ensuring there was gap surrounding the text*/
+display: flex; /*Display flex allows the position of the content to be styled more specifically*/
+flex-direction: column; /*Flex direction was set to column to ensure content was aligned vertically*/
+justify-content: center; /*Justify content center applied to ensure the content is aligned in the center*/
+transition: 2s; /*A timing of 2s was applied to ensure a fade effect was applied*/
+}
+.card:hover .card-body{
+right:0; /*Position right set to 0 so the card isnt fully visible until the user hovers*/
+}
+.card-info { /*Styling of text within the card*/
+font-size: 4rem; /*Font size set to 4rem ensuring it is fully visible to all users*/
+font-weight: 300; /*Font weight set to 300 to make the text bold*/
+margin-left: 200px; /*Margin left set to 200px to ensure a propotionate gap is applied to the text*/
+margin-right:100px; /*Margin right set to 100px to ensure a propotionate gap is applied to the text*/
+font-family: "DM Sans", sans-serif; /*The font family designated and chosen was "DN Sans"*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+top:15%; /*Top 15% applied to ensure text is not applied at the top of the card*/
+}
+.card-button { /*Styling of our services button within the card*/
+color:black; /*Colour black applied to the button to differentiate from background colour*/
+background:darkgray; /*Background set to white to differentiate from text colour and to match colour theme*/
+padding:20px; /*The Padding was set at 20px ensuring there was gap surrounding the text*/
+border-radius: 20px; /*Border Radius of 20px to round the edges of the button*/
+text-transform: capitalize; /*Capitalize applied to set the text in capital letters*/
+border: none; /*Border none applied to ensure no border is applied to the button*/
+outline:none; /*Outline none is set so there is no outline surrounding the button*/
+font-weight: 500; /*Font weight set to 500 to make the text bolder*/
+cursor: pointer; /*The cursor pointer property informs the browser to dipslay the pointer when the user hovers over the element*/
+width: 300px; /*The width was set at 300px to ensure the button was the correct size in relation to other elements on the page*/
+font-size: 3rem; /*Font size set to 3rem to ensure it is correct in relation to size of the button*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+left:43%; /*Button position left set as 47% of the left of the card to ensure the button appears centerally in the card*/
+top:60%; /*Button position set top 60% of the card to ensure it is positioned under the text*/
+font-family: "Aboreto", system-ui; /*The font family designated and chosen was "Aberto"*/
+}
+.title {
+font-size: 9rem; /*Font size set to 10rem ensuring it is large and visible for users*/
+color:lightgray; /*Colour set to black to match other elements on the page*/
+animation-name:title;  /*Animation of title applied to generate a fade in effect*/
+animation-duration: 7s; /*Animation duration 7s to match the users expected engagement on the page*/
+font-weight: bolder; /*Font weight set to bolder to ensure the title is bold*/
+}
+
+/*Meet the Team Page*/
+#meettheteam { /*Styling of background for body of meet the team page*/
+background-color: white; /*Background colour set to whitesmoke to differentiate from background colour of div*/
+} 
+.Man1 { /*Styling of div which contains information about Man 1*/
+position:absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+left:5%; /*Position of man 1 div set as 5% of the left of the page*/
+width: 700px; /*The width was set at 700px to ensure the div was the correct size in relation to other elements on the page*/
+height: 600px; /*The height was set at 600px to ensure the div was the correct size in relation to the width and other elements on the page*/
+top:40%; /*The div was positioned 40% from the top of the page to ensure it is positioned in the correct location*/
+animation-name: opacity; /*Opacity animation applied to apply and generate a fade in effect*/
+animation-duration: 4s; /*The duration was set 4seconds so the animation commenences for the correct duration required*/
+}
+@keyframes opacity { /*Keyframe animation called opacity created*/
+from {opacity: 0;} /*Identifies the the element should go from an opacity of 0 (cant be seen)*/
+to {opacity: 100;} /*Identifies the the element should to an opacity of 100 (fully visible)*/
+}
+.Man1 img{ /*Styling of image contained within man 1 div*/
+width: 50%; /*The width was set at 100% to ensure the image filled the entire width of the div*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+top:28%; /*Top -16% ensures the image is positioned correctly in relation to the div*/
+left: 0%; /*Left 0% ensures the image is positioned correctly in relation to the div*/
+}
+.Man1:hover .middle { /*Styling of user job title text*/
+opacity: 1; /*Opacity set to 1 so it is visible to users when they hover over the image*/
+}
+#text1 { /*Styling of text stating Man 1's name*/
+background-color: lightblue; /*Background colour set to light blue to match the colour theme and differentiate from the text colour*/
+color: darkgray; /*Colour set to black to make the text visible in relation to the background colour*/
+width: 200px; /*Width set to 500px to adher to the same width as the image*/
+font-size: 0.8rem; /*The font size was set as 2rem to ensure it was correct font size in relation to the image*/
+height: 20px; /*The height was set as 70px to ensure the height is correct the height in relation to the font-size*/
+text-align: center; /*Text align center was applied to ensure the text is aligned centerally*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+top:80%; /*Top was set at 80% of the div so the text is applied at the lower portion of the div*/ 
+font-family: "Aboreto", system-ui; /*The font family designated and chosen was "Aberto"*/
+padding-top: 20px; /*The Padding was set for the top of the text ensuring there was gap at the top of the text*/
+}
+.Lady1 {
+position:absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+left:38%; /*Position of man 1 div set as 5% of the left of the page*/
+width: 700px; /*The width was set at 700px to ensure the div was the correct size in relation to other elements on the page*/
+height: 600px; /*The height was set at 600px to ensure the div was the correct size in relation to the width and other elements on the page*/
+top:40%; /*The div was positioned 40% from the top of the page to ensure it is positioned in the correct location*/
+animation-name: opacity; /*Opacity animation applied to apply and generate a fade in effect*/
+animation-duration: 4s; /*The duration was set 4seconds so the animation commenences for the correct duration required*/
+background-color: white; /*Background colour set to white to match colour theme and differentiate for text colour*/
+} 
+.Lady1 img{ /*Styling of image contained within man 1 div*/
+width: 50%; /*The width was set at 100% to ensure the image filled most of the width of the div*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+top: 20%; /*Top -20% ensures the image is positioned correctly in relation to the div*/
+left: 10%; /*Left 10% ensures the image is positioned correctly in relation to the div*/
+height: 80%; /*Height set to 120% to ensure image proportion is correct in relation to the applied width*/
+}
+.Lady1:hover .middle { /*Styling of text box that appears when users hover over the div*/
+opacity: 1; /*Opacity set to 1 so it is visible to users when they hover over the image*/
+}
+.Lady1:hover .worker-info { /*Styling of the textbox that outlines worker information when a user hovers over the div*/
+background-color: lightgray; /*Background colour was set to a dark blue to match the colour theme and to differentiate from the text colour*/
+width:600px; /*Width set to 600px to match width of image and div*/
+height:250px;/*Height set to 250px to ensure it is the correct proportion in relation to the font-size*/
+padding:50px; /*The Padding was set at 30px ensuring there was gap surrounding the text*/
+color: white; /*The colour was set as black to differentiate from background colour*/
+opacity: 1; /*Opacity sets to 1 so the the text becomes visible when the user hovers over the div*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+top:94%; /*Top set 90% so the text appears at the bottom of the div*/
+font-size: 1.8rem; /*Font size set to 1.8rem to ensure it is the correct font size in relaltion to the image and div*/
+left:0%; /*Positioned left 0% to ensure the text is positioned correctly within the div*/
+font-family: "DM Sans", sans-serif; /*Font Family set as 'DM Sans' to ensure style is relvant for purpose of the webpage*/
+box-shadow: 1px 1px 1px 1px #333; /*A box shadow was applied to the text to differentiate it and make it stand out from the background*/
+}
+.Lady3:hover .worker-info { /*Styling of the textbox that outlines worker information when a user hovers over the div*/
+background-color: lightgrey; /*Background colour was set to dark blue to match the colour colour theme and to differentiate from the text colour*/
+width:600px; /*Width set to 600px to match width of image and div*/
+height:250px;/*Height set to 250px to ensure it is the correct proportion in relation to the font-size*/
+padding:50px; /*The Padding was set at 30px ensuring there was gap surrounding the text*/
+color: white; /*The colour was set as black to differentiate from background colour*/
+opacity: 1; /*Opacity sets to 1 so the the text becomes visible when the user hovers over the div*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+top:95%; /*Top set 90% so the text appears at the bottom of the div*/
+font-size: 1.8rem; /*Font size set to 1.8rem to ensure it is the correct font size in relaltion to the image and div*/
+left:0%; /*Positioned left 0% to ensure the text is positioned correctly within the div*/
+font-family: "DM Sans", sans-serif; /*Font Family set as 'DM Sans' to ensure style is relvant for purpose of the webpage*/
+box-shadow: 1px 1px 1px 1px #333; /*A box shadow was applied to the text to differentiate it and make it stand out from the background*/
+}
+.Lady2:hover .worker-info { /*Styling of the textbox that outlines worker information when a user hovers over the div*/
+background-color: lightgray; /*Background colour was set to a dark blue to match the colour theme and to differentiate from the text colour*/
+width:600px; /*Width set to 600px to match width of image and div*/
+height:250px;/*Height set to 250px to ensure it is the correct proportion in relation to the font-size*/
+padding:50px; /*The Padding was set at 30px ensuring there was gap surrounding the text*/
+color: white; /*The colour was set as black to differentiate from background colour*/
+opacity: 1; /*Opacity sets to 1 so the the text becomes visible when the user hovers over the div*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+top:95%; /*Top set 90% so the text appears at the bottom of the div*/
+font-size: 1.8rem; /*Font size set to 1.8rem to ensure it is the correct font size in relaltion to the image and div*/
+left:0%; /*Positioned left 0% to ensure the text is positioned correctly within the div*/
+font-family: "DM Sans", sans-serif; /*Font Family set as 'DM Sans' to ensure style is relvant for purpose of the webpage*/
+box-shadow: 1px 1px 1px 1px #333; /*A box shadow was applied to the text to differentiate it and make it stand out from the background*/
+
+}
+.Man2:hover .worker-info { /*Styling of the textbox that outlines worker information when a user hovers over the div*/
+background-color: lightgray; /*Background colour was set to a dark blue to match the colour theme and to differentiate from the text colour*/
+width:600px; /*Width set to 600px to match width of image and div*/
+height:250px;/*Height set to 250px to ensure it is the correct proportion in relation to the font-size*/
+padding:50px; /*The Padding was set at 30px ensuring there was gap surrounding the text*/
+color: white; /*The colour was set as black to differentiate from background colour*/
+opacity: 1; /*Opacity sets to 1 so the the text becomes visible when the user hovers over the div*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+top:95%; /*Top set 90% so the text appears at the bottom of the div*/
+font-size: 1.8rem; /*Font size set to 1.8rem to ensure it is the correct font size in relaltion to the image and div*/
+left:0%; /*Positioned left 0% to ensure the text is positioned correctly within the div*/
+font-family: "DM Sans", sans-serif; /*Font Family set as 'DM Sans' to ensure style is relvant for purpose of the webpage*/
+box-shadow: 1px 1px 1px 1px #333; /*A box shadow was applied to the text to differentiate it and make it stand out from the background*/
+
+}
+.Man1:hover .worker-info { /*Styling of the textbox that outlines worker information when a user hovers over the div*/
+background-color: lightgray; /*Background colour was set to a dark blue to match the colour theme and to differentiate from the text colour*/
+width:600px; /*Width set to 600px to match width of image and div*/
+height:250px;/*Height set to 250px to ensure it is the correct proportion in relation to the font-size*/
+padding:50px; /*The Padding was set at 30px ensuring there was gap surrounding the text*/
+color: white; /*The colour was set as black to differentiate from background colour*/
+opacity: 1; /*Opacity sets to 1 so the the text becomes visible when the user hovers over the div*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+top:95%; /*Top set 90% so the text appears at the bottom of the div*/
+font-size: 1.8rem; /*Font size set to 1.8rem to ensure it is the correct font size in relaltion to the image and div*/
+left:0%; /*Positioned left 0% to ensure the text is positioned correctly within the div*/
+font-family: "DM Sans", sans-serif;/*Font Family set as 'DM Sans' to ensure style is relvant for purpose of the webpage*/
+box-shadow: 1px 1px 1px 1px #333; /*A box shadow was applied to the text to differentiate it and make it stand out from the background*/
+
+}
+.Lady4:hover .worker-info { /*Styling of the textbox that outlines worker information when a user hovers over the div*/
+background-color: lightgray; /*Background colour was set to  a dark blue to match the colour theme and to differentiate from the text colour*/
+width:600px; /*Width set to 600px to match width of image and div*/
+height:250px;/*Height set to 250px to ensure it is the correct proportion in relation to the font-size*/
+padding:50px; /*The Padding was set at 30px ensuring there was gap surrounding the text*/
+color: white; /*The colour was set as white to differentiate from background colour*/
+opacity: 1; /*Opacity sets to 1 so the the text becomes visible when the user hovers over the div*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+top:95%; /*Top set 90% so the text appears at the bottom of the div*/
+font-size: 1.8rem; /*Font size set to 1.8rem to ensure it is the correct font size in relaltion to the image and div*/
+left:0%; /*Positioned left 0% to ensure the text is positioned correctly within the div*/
+font-family: "DM Sans", sans-serif; /*Font Family set as 'DM Sans' to ensure style is relvant for purpose of the webpage*/
+box-shadow: 1px 1px 1px 1px #333; /*A box shadow was applied to the text to differentiate it and make it stand out from the background*/
+
+}
+.worker-info {
+opacity: 0; /*Opacity set to 0 so it isnt visible until the user hovers*/
+}
+#text2 {
+background-color: lightblue; /*Background colour set to light blue to match the colour theme and differentiate from the text colour*/
+color: darkgray; /*Colour set to black to make the text visible in relation to the background colour*/
+width: 500px; /*Width set to 500px to adher to the same width as the image*/
+font-size: 0.8rem; /*The font size was set as 2rem to ensure it was correct font size in relation to the image*/
+height: 20px; /*The height was set as 70px to ensure the height is correct the height in relation to the font-size*/
+text-align: center; /*Text align center was applied to ensure the text is aligned centerally*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+top:80%; /*Top was set at 80% of the div so the text is applied at the lower portion of the div*/ 
+font-family: "Aboreto", system-ui; /*The font family designated and chosen was "Aberto"*/
+padding-top: 20px; /*The Padding was set for the top of the text ensuring there was gap at the top of the text*/
+}
+.Lady2 { /*Styling of Worker 3 div*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+right:5%; /*Positioned set as 5% of the right of the page to ensure the div is positioned correctly in relation to other elements on the page*/
+width: 700px; /*Width set to 700px to ensure the div was the correct proportion in relation to the other elements on the page*/
+height: 600px; /*Height set to 600px to ensure the div was the correct proportion in relation to the other elements on the page and the width*/
+top:40%; /* Div positioned 40% from the top of the page to ensure the div was positioned below the navigation bar*/
+animation-name: opacity; /*Animation opacity applied to generate a fade in effect*/
+animation-duration: 4s; /*The duration was set 4seconds so the animation commenences for the correct duration required*/
+}
+.Lady2 img{ /*Styling of the image of worker within the div*/
+width: 50%; /*Width set as 90% so the image takes up majority of the div*/
+align-items: center; /*Align items applied to ensure the image was positioned centerally*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+top:10%; /*Top positioned as -20.5% of the div to ensure the image was positioned correctly within the div*/
+left: 3%; /*Left positioned as 3% of the div to ensure the image was positioned correctly within the div*/
+height: 80%; /*Height set as 120% to ensure the image is the correct proportion within the div and in relation to the width*/
+}
+.middle {
+transition: .5s ease; /*Transistion of ease applied for a duration of 5 seconds to ensure the hover is a smooth motion*/
+opacity: 0; /*Opacity set at 0 so the text isn't visible until the user hovers over the div*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+top: 50%; /*Top set as 50% so the text is positioned correctly below at the bottom of the div*/
+left: 50%; /*Left set as 50% so the text is positioned correctly in relation to the div*/
+transform: translate(-50%, -50%); /*Transform tranlate at -50% -50% applied to generate a smooth hover transition*/
+-ms-transform: translate(-50%, -50%); /*Transform tranlate at -50% -50% applied to generate a smooth hover transition*/
+text-align: center; /*text align center was applied to ensure the text is aligned centerally*/
+font-family: "Aboreto", system-ui; /*The font family designated and chosen was "Aberto"*/
+width: 70%; /*Width set to 70% to ensure it the correct width in relation to the div*/
+font-size: 0.5rem; /*Font size set to 2rem to ensure it was the correct proportion for the div*/
+padding:20px; /*The Padding was set at 20px ensuring there was gap surrounding the text*/
+}
+.Lady2:hover .middle {
+opacity: 1; /*Opacity set as 1 so it is visible when the user hovers*/
+}
+#text3 {
+background-color: lightblue; /*Background colour set to light blue to match the colour theme and differentiate from the text colour*/
+color: darkgray; /*Colour set to black to make the text visible in relation to the background colour*/
+width: 500px; /*Width set to 500px to adher to the same width as the image*/
+font-size: 0.8rem; /*The font size was set as 2rem to ensure it was correct font size in relation to the image*/
+height: 5px; /*The height was set as 70px to ensure the height is correct the height in relation to the font-size*/
+text-align: center; /*Text align center was applied to ensure the text is aligned centerally*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+top:80%; /*Top was set at 80% of the div so the text is applied at the lower portion of the div*/ 
+font-family: "Aboreto", system-ui; /*The font family designated and chosen was "Aberto"*/
+padding-top: 20px; /*The Padding was set for the top of the text ensuring there was gap at the top of the text*/
+}
+.Lady3 {
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+left:5%; /*Positioned set as 5% of the left the page to ensure the div is positioned correctly in relation to other elements on the page*/width: 700px; /*Width set to 700px to ensure the div was the correct proportion in relation to the other elements on the page*/
+height: 600px; /*Height set to 600px to ensure the div was the correct proportion in relation to the other elements on the page and the width*/
+top:115%; /* Div positioned 115% from the top of the page to ensure the div was positioned below the above content on the page*/
+animation-name: opacity; /*Animation opacity applied to generate a fade in effect*/
+animation-duration: 4s; /*The duration was set 4seconds so the animation commenences for the correct duration required*/
+}
+.Lady3 img{ /*Styling of the worker 4 image within the div*/
+width: 50%; /*Width set as 90% so the image takes up majority of the div*/
+align-items: center; /*Align items center applied to the image is centeral in the div*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+left:7%; /*Left positioned as 7% of the div to ensure the image was positioned correctly within the div*/
+top:0%; /*Top positioned as -45% of the div to ensure the image was positioned correctly within the div*/
+}
+.Lady3:hover .middle {
+opacity: 1; /*Opacity set as 1 so it is visible when the user hovers*/
+}
+#text4 {
+background-color: lightblue; /*Background colour set to light blue to match the colour theme and differentiate from the text colour*/
+color: darkgray; /*Colour set to black to make the text visible in relation to the background colour*/
+width: 500px; /*Width set to 500px to adher to the same width as the image*/
+font-size: 0.8rem; /*The font size was set as 2rem to ensure it was correct font size in relation to the image*/
+height: 20px; /*The height was set as 70px to ensure the height is correct the height in relation to the font-size*/
+text-align: center; /*Text align center was applied to ensure the text is aligned centerally*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+top:80%; /*Top was set at 80% of the div so the text is applied at the lower portion of the div*/ 
+font-family: "Aboreto", system-ui; /*The font family designated and chosen was "Aberto"*/
+padding-top: 20px; /*The Padding was set for the top of the text ensuring there was gap at the top of the text*/
+}
+.Man2 {
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+left:38%; /*Positioned set as 38% of the left the page to ensure the div is positioned correctly in relation to other elements on the page*/
+width: 700px; /*Width set to 700px to ensure the div was the correct proportion in relation to the other elements on the page*/
+height: 600px; /*Height set to 600px to ensure the div was the correct proportion in relation to the other elements on the page and the width*/
+top:115%; /* Div positioned 115% from the top of the page to ensure the div was positioned below the above content on the page*/
+animation-name: opacity; /*Animation opacity applied to generate a fade in effect*/
+animation-duration: 4s; /*The duration was set 4seconds so the animation commenences for the correct duration required*/
+}
+.Man2 img{ /*Styling of the image of worker within the div*/
+width: 50%; /*Width set as 105% so the image takes up the width of the div*/
+align-items: center; /*Align items applied to ensure the image was positioned centerally*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+left:-4%; /*Left positioned as -4% of the div to ensure the image was positioned correctly within the div*/
+top:16%; /*Top positioned as -41% of the div to ensure the image was positioned correctly within the div*/
+height: 90%; /*Height set as 170% to ensure the image is the correct proportion within the div and in relation to the width*/
+}
+.Man2:hover .middle {
+opacity: 1; /*Opacity set as 1 so it is visible when the user hovers*/
+}
+#text5 {
+background-color: lightblue; /*Background colour set to light blue to match the colour theme and differentiate from the text colour*/
+color: darkgray; /*Colour set to black to make the text visible in relation to the background colour*/
+width: 500px; /*Width set to 500px to adher to the same width as the image*/
+font-size: 0.8rem; /*The font size was set as 2rem to ensure it was correct font size in relation to the image*/
+height:20px; /*The height was set as 70px to ensure the height is correct the height in relation to the font-size*/
+text-align: center; /*Text align center was applied to ensure the text is aligned centerally*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+top:80%; /*Top was set at 80% of the div so the text is applied at the lower portion of the div*/ 
+font-family: "Aboreto", system-ui; /*The font family designated and chosen was "Aberto"*/
+padding-top: 20px; /*The Padding was set for the top of the text ensuring there was gap at the top of the text*/
+}
+.Lady4 {
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+right:5%; /*Positioned set as 5% of the right the page to ensure the div is positioned correctly in relation to other elements on the page*/
+width: 700px; /*Width set to 700px to ensure the div was the correct proportion in relation to the other elements on the page*/
+height: 600px; /*Height set to 600px to ensure the div was the correct proportion in relation to the other elements on the page and the width*/
+top:115%; /* Div positioned 115% from the top of the page to ensure the div was positioned below the above content on the page*/
+animation-name: opacity;/*Animation opacity applied to generate a fade in effect*/
+animation-duration: 4s; /*The duration was set 4seconds so the animation commenences for the correct duration required*/
+}
+.Lady4 img{ /*Styling of the worker 4 image within the div*/
+width: 50%; /*Width set as 90% so the image takes up majority of the div*/
+align-items: center;  /*Align items center applied to the image is centeral in the div*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+left:4%; /*Left positioned as 4% of the div to ensure the image was positioned correctly within the div*/
+top:0%; /*Top positioned as -45% of the div to ensure the image was positioned correctly within the div*/
+}
+#text6 {
+background-color: lightblue; /*Background colour set to light blue to match the colour theme and differentiate from the text colour*/
+color: darkgray; /*Colour set to black to make the text visible in relation to the background colour*/
+width: 500px; /*Width set to 500px to adher to the same width as the image*/
+font-size: 0.8rem; /*The font size was set as 2rem to ensure it was correct font size in relation to the image*/
+height: 20px; /*The height was set as 70px to ensure the height is correct the height in relation to the font-size*/
+text-align: center; /*Text align center was applied to ensure the text is aligned centerally*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+top:80%; /*Top was set at 80% of the div so the text is applied at the lower portion of the div*/ 
+font-family: "Aboreto", system-ui; /*The font family designated and chosen was "Aberto"*/
+padding-top: 20px; /*The Padding was set for the top of the text ensuring there was gap at the top of the text*/
+}
+#footerMTT { /*Positioning of footer on the Meet the Team page*/
+top:177%; /*Postioned 177% of the page to ensure it is the correct postioning in relation to all other elements of the page*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+}
+   
+/*About Us Page*/
+#ComputerAU { /*Styling of first image on the page*/
+width: 140%; /*Width set at 140% to ensure the image filled the whole page and was proprtioned correctly*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+height: 100%; /*Height set at 100% to ensure the image was proprtioned correctly in relation to the width*/
+}
+#aboutus { /*Styling of first block of text*/
+background-color: #00679e; /*Background colour set as a dark blue to match colour theme and to allow text to be legible*/
+color:black; /*Text colour set as white to match colour theme and differentiate from background colour*/
+width: 300px; /*Width set as 700px to ensure the div is the correct proportion in relation to the image*/
+height: 10px; /*Height set as 800px to ensure the div is the correct proportion in relation to the image and assigned widths */
+font-size: 0.8rem; /*Font size set as 2.3rem to ensure it is the correct size in relation to the div*/
+font-family: "Adamina", serif; /*The font family designated and chosen was "Adamina"*/
+text-align: center; /*Text align center applied to ensure the text is central*/ 
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+left: 35%; /*The div was positioned left 35% of the page to ensure it is positioned correctly in relation to other elements on the page*/
+align-items: center; /*Align items center was applied to ensure all content was central*/
+box-shadow: 5px 5px 10px 2px lightgrey; /*A box shadow was applied to differentiate the div from the background image-particulalry important in terms of accessibility*/
+border-radius: 20px; /*Border Radius of 20px was applied to round the edges*/
+padding:30px;  /*The Padding was set at 30px ensuring there was gap surrounding the text*/
+padding-top: 100px; /*The Padding for the top of the text was set at 100px ensuring there is a gap at the top of the text*/
+font-weight: 0;
+}
+.section1 { /*Styling and positioning of section 1 on the page*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+left: 0; /*Positioned left 0 ensuring it was positioned correctly on the page*/
+width: 100vh; /*Width set at 100vh to ensure the parallex effect works correctly for that sections*/
+height:10vh; /*Height set at 10vh to ensure the parallex effect works correctly for that sections*/
+}
+.section2 {  /*Styling and positioning of section 1 on the page*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+right: 0; /*Positioned right 0 ensuring it was positioned correctly on the page*/
+width: 100vh; /*Width set at 100vh to ensure the parallex effect works correctly for that sections*/
+margin-top: 70%; /* A margin was applied to the top of the section to ensure a appropriate gap between both sections was applied*/
+}
+.section3 {
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+left: 0; /*Positioned left 0 ensuring it was positioned correctly on the page*/
+width: 100vh; /*Width set at 100vh to ensure the parallex effect works correctly for that sections*/
+top:150%; /* A margin was applied to the top of the section to ensure a appropriate gap between both sections was applied*/
+}
+#Computer2 { /*Styling of Computer 2 image*/
+width: 140%; /*Width set at 140% to ensure the image filled the whole page and was proprtioned correctly*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+height: 1200px; /*Height set at 1200px to ensure the image was proprtioned correctly in relation to the width*/
+}
+#Computer3 {
+width: 100%; /*Width set at 100% to ensure the image filled the whole page and was proprtioned correctly*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+height: 1000px; /*Height set at 1000px to ensure the image was proprtioned correctly in relation to the width*/
+top:0%; /* Image positioned top 0% to ensure it is positioned at the top of the div*/
+}
+#aboutus2 { /*Styling of second and third block of text*/
+background-color:#00679e; /*Background colour set a light blue to match colour theme*/
+color:black; /*Text colour set as white to match colour theme and differentiate from background colour*/
+width: 700px; /*Width set as 700px to ensure the div is the correct proportion in relation to the image*/
+height: 200px; /*Height set as 800px to ensure the div is the correct proportion in relation to the image and assigned widths */
+font-size: 1rem; /*Font size set as 2.3rem to ensure it is the correct size in relation to the div*/
+padding: 30px; /*The Padding was set at 30px ensuring there was gap surrounding the text*/
+font-family: "Adamina", serif; /*The font family designated and chosen was "Adamina"*/
+text-align: center; /*Text align center applied to ensure the text is central*/ 
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+right: 10%; /*The div was positioned right 10% of the page to ensure it is positioned correctly in relation to other elements on the page*/
+align-items: center; /*Align items center was applied to ensure all content was central*/
+box-shadow: 5px 5px 10px 2px lightgrey; /*A box shadow was applied to differentiate the div from the background image-particulalry important in terms of accessibility*/
+border-radius: 20px; /*Border Radius of 20px was applied to round the edges*/
+top:0; /* Div positioned top 0% to ensure it is positioned at the top of the section*/
+padding-top: 250px; /*The Padding for the top of the text was set at 250px ensuring there was gap at the top of the text*/
+}
+.section1,.section2,.section3 { /*Styling and Positioning applied to all 3 sections*/
+position: relative; /*Position set to relative to ensure the positioning occurs relative/in relation to the other elements on the page*/
+justify-content: center; /*Justify content center is applied to ensure all content are positioned centerally*/
+align-items: center; /*Align items center is applied to ensure all content are positioned centerally*/
+height: 100%; /*Height 100% is applied to ensure the full section content is displayed*/ 
+transform-style: preserve-3d; /* Preserve 3d transfrom style was applied to ensure the parallex effect is applied to the sections on the page*/
+width: 100%; /*Width 100% ensures the content takes the up the entire width of the page*/
+}
+#ComputerAU,#Computer2,#Computer3{ /*Styling of 3 images on the page*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+height: 100%; /*Height set as 100% so the full image is displayed*/
+width: 100%; /*Width set as 100% so the full image is displayed and also ensures the image is the correct proportion in relation to the height*/
+object-fit: cover; /*Obejct fit cover applied to ensure the image covers the entires page*/
+transform: translateZ(-10px) scale(2.5); /*The transform:transform translate z was applied to create a parallex effect by adjusting the z property, scale 2.5 was applied to the image to increase the image in size*/
+margin-bottom: 0; /*A margin bottom was applied to ensure the image filled the enitre Div*/
+}
+#footerAU { /*Styling and positioning of footer on About Us Page*/
+top:700%;  /*Footer positioned 700% of the page to ensure it appears below the content*/
+box-shadow: 10px 10px 10px 10px black; /*Box shadow to make the footer differentible in relation to background colour*/
+}
+                
+/*Contact Us Page*/
+#Marketing {
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+height: 1700px; /*Height set as 1700px to ensure it is the right proportion in relation to the page and the width*/
+left: 0%; /* Postioned set a left 0% of the page too ensure there is no gao*/
+width: 200%; /*Width set at 200% to ensure the full image is displayed*/
+height: 100%; /*Height set at 100% to ensure the full image is displayed*/
+object-fit: cover; /*Object fit cover selected to ensure the image covers the entire page*/ 
+transform: translateZ(-10px) scale(2.5); /*The transform:transform translate z was applied to create a parallex effect by adjusting the z property, scale 2.5 was applied to the image to increase the image in size*/
+top:5%; /* top 5% ensures it is positioned correctly on the page*/
+}
+#building {
+width: 100%; /*Width set at 100% to ensure the full image is displayed*/
+height: 180%;  /*Height set at 180% to ensure the full image is displayed*/
+transform: translateZ(0px) scale(1); /*The transform:transform translate z was applied to create a parallex effect by adjusting the z property, scale 1 was applied to the image to ensure the image stays the same in size*/
+z-index: -2; /*Z index -2 applied to ensure content is stacked correctly*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+top:220%; /*The div was positioned 220% of the page to ensure it is positioned correctly in relation to other elements on the page*/
+object-fit: cover; /*Object fit cover selected to ensure the image covers the entire page*/ 
+}
+#building img {
+width:100%; /*Width 100% assigned to ensure the div fills the entire width of the page*/
+height:100%; /*Height 100% assigned to ensure the entire div is displayed*/
+}
+.img {
+transform-style: preserve-3d; /* Preserve 3d transfrom style was applied to ensure the parallex effect is applied to the image*/ 
+}
+#map { /*Styling of Iframe incorporating google map*/
+width: 1100px; /*Width set at 1100px to ensure it is the correct proportion in relation to other elements on the page*/
+height: 978px; /*Height set at 978px to ensure it is the correct proportion in relation to other elements on the page and the assigned heights*/
+top:20%; /*Postioned top 20% of the page to enusre it is positioned correctly in relation to other elements on the page*/
+border-radius: 70px; /*Border Radius of 70px to round the edges*/
+}
+.map { /*Styling and positioning of div containing Iframe of map*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+left: 10%; /*Postioned left 10% of the page to ensure it is positioned correctly on the page*/
+right: 0; /*Postioned right 0 of the page to ensure it is positioned correctly on the page*/
+width: 100vh; /*Width 100vh ensures the full width of the map is displayed*/
+top:5%; /*Positioning the map top 5% of the map positions the map correctly in relation to the div*/
+}
+#contactdetails { /*Div containing contact details for the company*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+right: 10%;  /* Positioned right 10% to ensure it is positioned correctly in relation to other elements on the page*/
+background-color: #00679e; /*Background colour set as a dark blue to match colour theme*/
+color: white; /*Text colour set as white to differentiare from background colour and to match colour theme*/
+width: 1000px; /*Width set at 1000px to ensure it is the right proportion in relation to other elements on the page*/
+height: 840px; /*Height set at 840px to ensure the it is the right proportion in relation to other elements on the page and the assigned height*/
+font-size: 0.8rem; /*Font Size set to 2.5rem to ensure it is the correct font size for the size of the div*/
+text-align: center; /*Text align center applied to ensure the text is central*/ 
+font-family: "Adamina", serif;/*The font family designated and chosen was "Adamina"*/
+font-weight: lighter; /* Font Weight lighter applied to ensure the font is light*/
+padding: 60px; /*The Padding was set at 40px ensuring there was gap surrounding the text*/
+top:150%; /* Positioned 150% from the top of the page to ensure the fiv is positioned correctly on the page*/
+align-items: center; /*Align items applied to ensure the content is positioned centerally*/
+border-radius: 50px;
+}
+.section1C { /*Styling and Positioning of Section 1*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+left: 0; /* Ensures it is positioned correctly on the page*/
+width: 100vh; /*Width set as 100vh to ensure the div fills the entire width of the page*/
+height:10vh; /*Height set as 10vh to ensure it is the correct height in relation to the width and all content in the div is displayed*/
+}
+.section1C,.map  { /*Styling both for section 1 and map*/
+position: relative; /*Position relative applied to ensure the positioning is reletive to other elements on the page*/
+justify-content: center; /*Jutsify content center applied to ensure the content is positioned in the centerally*/
+align-items: center; /*Align items center applied to ensure the content is positioned in the centerally*/
+height: 100%; /*Height 100% applied to ensure all the content is displayed*/
+transform-style: preserve-3d; /* Preserve 3d transfrom style was applied to ensure the parallex effect is applied to the sections on the page*/
+left:0%; /*Left 0% applied to ensure the divs are positioned correctly on the page*/
+}
+.socialbar { /*Styling of Bar containing social icons*/
+display: flex; /*Display flex was applied to the positioning could be adjusted more accordingly*/
+justify-content: center; /*Justify content center was applied to position all elements centerally*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+top: 80%; /*Positioned top at 80% to ensure it is positioned correctly in relation to other elements on the page*/
+width: 50%; /*Width 50% applied so it takes 50% of the div*/
+opacity: 100%; /*Opacity set to 100% so it is fully visible for users*/
+left: 25%; /*Positioned left 25% of the div so it is positioned centrally of the div*/
+}
+.socialbar img { /*Styling of the social bar icons*/
+width:60%; /*Width 60% so the images are the correct width for the bar*/
+height:60%; /*Height set at 60% so they are the correct height for the social bar and width applied*/
+border-radius: 90px; /*A border radius of 60px was applied to round the edges*/
+padding: 20px; /*The Padding was set at 10px ensuring there was gap surrounding the image*/
+background-color: darkgray; /*Background colour set as white to make colour theme and differentiate from the div background colour*/
+margin:3.5%; /*Margin 3.5% applied to ensure there is a gap in between the icons*/
+}
+#footerCU { /*Styling and positioning of footer on Contact Us page*/
+top:400%; /*Position set as 400% of the top of the page to ensure it is placed below all other content on the page*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+box-shadow: 10px 10px 10px 10px black; /*Box shadow to make the footer differentible in relation to background colour*/
+}
+
+/*Our Services Page*/
+#computer2 { /*Styling and positioning of main image on our services page*/
+transform: translateZ(-10px) scale(2); /*The transform:transform translate z was applied to create a parallex effect by adjusting the z property, scale 2 was applied to the image to increase the image in size*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+height: 100%; /*Height set as 100% so full image is shown*/
+width: 110%; /*Width set as 110% so the image fills the entire width of the page*/
+object-fit:cover; /*Object fit set to cover the image covers the entire width of the page*/
+z-index:-1; /*Z-Index of 1 applied to ensure the correct heirachy of elements on the page was followed*/
+left:-2%; /*Positioned left as -2% to ensure the image is positioned correctly on the page*/
+}
+.socialmedia { /*Styling of Social Media Icon*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+top:50%; /* Positioned 50% from the top of the page*/
+width: 200px; /*Width set as 400px to ensure it is the correct size for the page*/
+height: 400px; /*Height also set as 400px to ensure it is the correct size in relation to the width applied*/
+border-radius: 40px; /*A border radius of 40px was applied to round the edges*/
+left: 10%; /*Postioned 10% left of the page to ensure it is positioned correctly on the page*/
+padding: 20px; /*The Padding was set at 20px ensuring there was gap surrounding the text*/
+}
+.socialmedia img {
+width:80%; /*Width of image set as 80% so the images were the correct size for the div*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+left:10%; /*The image was positioned left 10% of the div to ensure it was positioned correctly and centerally*/
+top:10%; /*The image was positioned top 10% of the div to ensure it was positioned correctly and centerally*/
+}
+.brand {
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+top:50%; /* Positioned 50% from the top of the page*/
+width: 400px; /*Width set as 400px to ensure it is the correct size for the page*/
+height: 400px; /*Height also set as 400px to ensure it is the correct size in relation to the width applied*/
+border-radius: 40px; /*A border radius of 40px was applied to round the edges*/
+left: 50%; /*Postioned 43.5% left of the page to ensure it is positioned correctly on the page (in the centre of the page*/
+padding: 20px; /*The Padding was set at 20px ensuring there was gap surrounding the Icon*/
+}
+.brand img {
+width:80%; /*Width of image set as 80% so the images were the correct size for the div*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+left:10%; /*The image was positioned left 10% of the div to ensure it was positioned correctly and centerally*/
+top:10%; /*The image was positioned top 10% of the div to ensure it was positioned correctly and centerally*/
+}
+.coding {
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+top:50%; /*Positioned 50% from the top of the page*/
+width: 400px; /*Width set as 400px to ensure it is the correct size for the page*/
+height: 400px; /*Height also set as 400px to ensure it is the correct size in relation to the width applied*/
+border-radius: 40px; /*A border radius of 40px was applied to round the edges*/
+right: 10%; /*Postioned right 10% of the page to ensure it is positioned correctly on the page*/
+padding: 20px; /*The Padding was set at 20px ensuring there was gap surrounding the icon*/
+}
+.coding img {
+width:80%; /*Width of image set as 80% so the images were the correct size for the div*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+left:10%; /*The image was positioned left 10% of the div to ensure it was positioned correctly and centerally*/
+top:10%; /*The image was positioned top 10% of the div to ensure it was positioned correctly and centerally*/
+}
+#SocialMediaService { /*Styling of Text within Icon divs*/
+top:82%; /*Positioned 82% from top of div to ensure it is positioned below the icon*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+font-family: "Aboreto", system-ui; /*The font family designated and chosen was "Aberto"*/
+font-size: 2rem; /*Font Size set to 2.5rem to ensure it is the correct font size for the size of the div*/
+}
+#footerourservices { /*Styling and positioning of footer for our services page*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+top:470%; /*Set 530% from the top of the page to ensure it is positioned below content on the page*/
+width: 100%; /*Width set to 100% to ensure it spans the entire width of the page*/
+text-align: center; /*Text align center applied to ensure the text is central*/ 
+padding: 30px; /*The Padding was set at 20px ensuring there was gap surrounding the text*/
+box-shadow: 10px 10px 10px 10px black; /*Box shadow to make the footer differentible in relation to background colour*/
+}
+#socialmedia,#branddevelopment,#coding, img{ /*Styling of the images*/
+width:100%; /*Width set to 100% so they take up entire width of div*/
+}
+.socialmedia a{ /*Styling/Transitioning of anchor elements links to service buttons at top of page*/
+scroll-behavior:smooth; /*Ensures that when the relevant button is clicked a smooth transition to the relevant image is evident*/
+}
+#arrowicon {
+height:15%; /*Height of 15% applied to ensure it is the correct size in relation to other elements on the page*/
+border-radius: 150px; /*A border radius of 150px was applied to round the edges of the background*/
+width:7%; /*Width of 7% applied to ensure it is the correct size in relation to other elements on the page and the applied height*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+top:200%; /*Positioned 200% from the top of the page to ensure it is positioned inline with the first image*/
+right:5%; /*Positioned right 5% of the page to ensure it is position correctly in relation to the image*/
+} 
+#arrowicon2 {
+height:15%; /*Height of 15% applied to ensure it is the correct size in relation to other elements on the page*/
+border-radius: 150px; /*A border radius of 150px was applied to round the edges of the background*/
+width:7%; /*Width of 10% applied to ensure it is the correct size in relation to other elements on the page and the applied height*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+top:300%; /*Positioned 300% from the top of the page to ensure it is positioned inline with the second image*/
+right:5%;  /*Positioned right 5% of the page to ensure it is position correctly in relation to the image*/
+}
+#arrowicon3 {
+height:15%; /*Height of 15% applied to ensure it is the correct size in relation to other elements on the page*/
+border-radius: 150px; /*A border radius of 150px was applied to round the edges of the background*/
+width:7%; /*Width of 10% applied to ensure it is the correct size in relation to other elements on the page and the applied height*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+top:400%; /*Positioned 400% from the top of the page to ensure it is positioned inline with the second image*/
+right:5%; /*Positioned right 5% of the page to ensure it is position correctly in relation to the image*/
+}
+#arrowicon img {
+height:90%; /*Height set at 90% to ensure it fill majority of the background*/
+width:90%; /*Width set at 90% to ensure it fill majority of the background*/
+}
+#arrowicon2 img {
+height:90%; /*Height set at 90% to ensure it fill majority of the background*/
+width:90%; /*Width set at 90% to ensure it fill majority of the background*/
+}
+#arrowicon3 img {
+height:90%; /*Height set at 90% to ensure it fill majority of the background*/
+width:90%; /*Width set at 90% to ensure it fill majority of the background*/
+}
+
+section {
+font-size: 2rem; /*Font Size set to 2.5rem to ensure it is the correct font size for the size of the Section*/
+padding: 2rem; /*The Padding was set at 20px ensuring there was gap surrounding the text*/
+background-color: #333; /*Background colour set as black to differentiate from main background*/
+color: white; /*Text colour set as white to differentiate from background colour and to match colour theme*/
+}
+header {
+position: relative; /*Position set to relative to the header is position in relation to other elements on the page*/
+display:flex; /*Display flex applied so the position of the of the header can be altered more specifically*/
+justify-content: center; /*Justify content center applied so the the content is positioned centerally*/
+align-items: center; /*Align items center applied so the the content is positioned centerally*/
+height: 100%; /*Height set to 100% to ensure the full the content is displayed*/
+transform-style: preserve-3d; /* Preserve 3d transfrom style was applied to ensure the parallex effect is applied to the section on the page*/
+z-index: -1; /*Z index -1 applied so the correct heirarchy of elements is followed*/
+}
+.background,
+.foreground {
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+height: 100%; /*Height set 100% so the full image is displayed*/
+width: 100%; /*Width set 100% so the full image is displayed and it fills the entire width of the page*/
+object-fit:cover; /*Obejct fit cover applied so the image covers the entire width of the page*/
+z-index:-1; /*Z index -1 applied so the correct heirarchy of elements is followed*/
+}
+.background {
+   transform: translateZ(-10px) scale(2); /*The transform:transform translate z was applied to create a parallex effect by adjusting the z property, scale 2.5 was applied to the image to increase the image in size*/
+}
+.foreground {
+transform: translateZ(-5px) scale(1.5); /*The transform:transform translate z was applied to create a parallex effect by adjusting the z property, scale . was applied to the image to increase the image in size*/
+}
+.wrapper {
+height: 100vh; /*Height of 100vh given so it covers the entire page*/
+overflow-y: auto; /*Overflow y set to auto to ensure the scroll is dependent of other elements on the page*/
+overflow-x: hidden; /*Overflow set to hidden so the user cant scroll horizontally-would make its hard for users to adapt to that*/
+perspective: 10px; /*Defines how far away the element is from the user so the the content in the wrapper is 10px away from the user enhancing the parallex effect*/
+width: 100%; /*Width of 100% applied to ensure it fills the entire width of the page*/
+}  
+.home {
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+justify-content: center; /*Justify content center applied to ensure the content inside the div is positioned centerally*/
+align-items: center; /*Align Items center applied to ensure the content inside the div is positioned centerally*/
+height: 100%; /*Height 100% set to ensure the full content of the div is displayed*/
+padding:20px; /*The Padding was set at 20px ensuring there was gap between other elements in the page*/
+width: 100%; /*Width of 100% applied to ensure it fills the entire width of the page*/
+top:210%;  /*Positioned 420% of the page to ensure it is positioned correctly in relation to other elements on the page*/
+display:flex; /*Display flex is applied to ensure the position of the content can be styled more specifically*/
+transform-style: preserve-3d; /* Preserve 3d transfrom style was applied to ensure the parallex effect is applied to the section on the page*/
+z-index: -1; /*Z index -1 applied so the correct heirarchy of elements is followed*/
+   }
+.background,
+.foreground {
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+height: 120%; /*Height of 100% applied to ensure the entire image is displayed*/
+width: 100%; /*Width of 100% applied to ensure it fills the entire width of the page*/
+object-fit: cover; /*Object fit cover selected to ensure the image covers the entire page*/ 
+}
+.foreground {
+transform: translateZ(-5px) scale(2); /*The transform:transform translate z was applied to create a parallex effect by adjusting the z property, scale 2 was applied to the image to increase the image in size*/
+}
+@keyframes title {
+from {opacity: 0;} /*Identifies the the element should go from an opacity of 0 (cant be seen)*/
+to {opacity: 100;} /*Identifies the the element should to an opacity of 100 (fully visible)*/
+} 
+section {
+padding:6rem; /*Padding set as 6rem so there is a gap between other elements*/
+background-color: #333; /*Background colour set as black to differentiate from main background*/
+color: white; /*Text colour set as white to differentiate from background colour and to match colour theme*/
+background-color: lightblue; /*Background colour set as lightblue to match colour theme*/
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /*Main font set to Segoe UI to ensure it is the correct font for that particular element*/
+height: 13%; /*Height set at 13% to ensure it is the correct propotion in relation to other elements on the page*/
+top: 300%; /*Positioned 300% from top of page to ensure it is positioned correctly in relation to other elements on the page*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+text-align: center; /*Text align center applied to ensure the text is central*/ 
+}
+#teaminfo {
+top:10%; /*Positioned 10% from top of page to ensure it is positioned correctly in relation to other elements on the page*/
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+}
+footer {
+background-color: white; /*Background colour set to white to match the colour theme*/
+font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /*Main font family set as cambria- works well within small font size*/
+color: black;  /*Colour black set for text to clearly differentiate from the background colour making it fully legible for users*/
+font-size: 0.5rem; /*Font Size set to 1.5rem to ensure it is the correct font size for the size of the footer*/
+text-align: center; /*Text align center applied to ensure the text is central*/ 
+position: absolute; /*Position absolute allows you to adjust the position of the element on the page*/ 
+top:430%; /*Footer positioned 420% of the page to ensure it bellow all content*/
+width: 100%; /*Width set to 100% to ensure it fills the entire width of the page*/
+padding: 30px; /*Padding set as 30px so there is a gap between other elements/*/
+border-radius: 10px; /*A border radius of 10px was applied to round the edges*/
+}
+
+
+@media only screen and (max-width:3000px) {  
+   h1 {
+   font-size: 5rem;
+   }
+   .topnav button {
+   width:15%;
+   height:37%;
+   margin:2%;
+   }
+   #Team {
+   top:50%;
+   }
+   #topcompany {
+   top:102%;
+   font-size: 2rem;
+   left:-300px;
+   }
+   .home {
+   top:150%;
+   }
+   #Serviceshome {
+   width:20%;
+   top:50%;
+   height:25%;
+   }
+   #Services1 {
+      width:20%;
+      height:25%;
+      top:50%;
+   }
+   #Services2 {
+         width:20%;
+         height:25%;
+         top:80%;
+   }
+   #Services3 {
+            width:20%;
+            height:25%;
+            top:80%;
+   }
+   #Services4 {
+               width:20%;
+               height:25%;
+               top:50%;
+   }
+   #Upgrade {
+   width:20%;
+   top:74%;
+   font-size:1rem;;
+   }
+   #team {
+   width:20%;
+   top:74%;
+   font-size:1rem;;
+   }
+   #topquality {
+      width:20%;
+      top:104%;
+      font-size:1rem;;
+   }
+   #SocialMedia{
+      width:20%;
+      top:104%;
+      font-size:1rem;;
+   }
+   .card-info {
+   font-size: 1rem;
+   top:8%;
+   }
+   footer {
+   top:380%;
+   }
+   .title {
+   font-size: 5rem;
+   }
+   #Upgrade:hover {
+   text-decoration: underline 5px;
+   }
+   #team:hover {
+      text-decoration: underline 5px;
+   }
+   #topquality:hover {
+         text-decoration: underline 5px;
+   }
+   #SocialMedia:hover {
+            text-decoration: underline 5px;
+   }
+   #zoomin-btn{
+   width:5%;
+   height:10%;
+   left:7.5%;
+   }
+   #zoomout-btn{
+   width:5%;
+   height:10%;
+   left:15%;
+   }
+   #zoomreset-btn{
+   width:5%;
+   height:10%;
+   }
+   .colourpicker {
+   width:8%;
+   right:16%;
+   }
+   .dropdown {
+   right:15%;
+   }
+   #aboutus {
+   height:80%;
+   }
+   #aboutus2 {
+   height:80%;
+   }
+   #contactdetails {
+   width:38%;
+   right:1%;
+   height:80%;
+   }
+   #map {
+   width:80%;
+   right:1%;
+   height:80%;
+   }
+   .map {
+   top:-8%;
+   height:120%;
+   }
+   .Man1 {
+   width:30%;
+   height:45%;
+   top:60%;
+   left:1%;
+   }
+   .Lady1 {
+   width:30%;
+   height:45%;
+   top:60%;
+   left:35%;
+   }
+   .Lady2 {
+   width:30%;
+   height:45%;
+   top:60%;
+   right:1%;
+   }
+   .Lady3 {
+   width:30%;
+   height:45%;
+   top:160%;
+   left:1%;
+   }
+   .Man2 {
+   width:30%;
+   height:45%;
+   top:160%;
+   left:35%;
+   }
+   .Lady4 {
+   width:30%;
+   height:45%;
+   top:160%;
+   right:1%;
+   }
+   #text1 {
+   width:80%;
+   padding:10px;
+   }
+   #text2 {
+   width:80%;
+   padding:10px;
+   }
+   #text3 {
+   width:80%;
+   padding:20px;
+   }
+   #text4 {
+   width:80%;
+   padding:20px;
+   }
+   #text5 {
+   width:80%;
+   padding:20px;
+   }
+   #text6 {
+   width:80%;
+   padding:20px;
+   }
+   .Man1:hover .worker-info {
+         width:78%;
+         font-size: 1rem;
+         height:50%;
+         top:100%;
+   }
+   .Man2:hover .worker-info {
+         width:78%;
+         font-size: 1.1em;
+         height:60%;
+         top:110%;
+   }
+   .Lady1:hover .worker-info {
+         width:78%;
+         font-size: 1.1em;
+         height:50%;
+         top:100%;
+   }
+   .Lady2:hover .worker-info {
+         width:78%;
+         font-size: 1.1em;
+         height:50%;
+         top:100%;
+   }
+   .Lady3:hover .worker-info {
+         width:80%;
+         font-size: 1.1em;
+         height:60%;
+         top:110%;
+   }
+   .Lady4:hover .worker-info {
+         width:70%;
+         font-size: 1.1em;
+         height:58%;
+         top:110%;
+   }
+   #footerMTT {
+   top:260%;
+   }
+   .socialmedia {
+   width:25%;
+   height:50%;
+   top:60%;
+   left:5%;
+   }
+   .brand {
+      width:25%;
+      height:50%;
+      top:60%;
+      left:37%;
+   }
+   .coding {
+   width:25%;
+   height:50%;
+   top:60%;
+   right:5%;
+   }
+   #footerourservices {
+   top:503%;
+   box-shadow: none;
+   }
+   }
+   @media only screen and (max-width:600px) { /*Media query adjusting elements for mobile*/
+   #Team {
+   top:120%;
+   width:100%;
+   left:0;
+   height:30%;
+   }
+   .topnav button {
+   width: 28%;
+   height:20%;
+   margin-top:3%;
+   position: static;
+   }
+   #topcompany {
+   left:-518px;
+   top:150%;
+   font-size: 1.5rem;
+   }
+   .topnav button p {
+   font-size: 1rem;
+   }
+   h1 {
+   font-size: 3rem;
+   position: static;
+   width:70%;
+   left:0%;
+   margin-bottom:-10%;
+   }
+   #arrowicon {
+   top:230%;
+   }
+   #arrowicon2 {
+   top:268%;
+   }
+   #arrowicon3 {
+   top:302%;
+   }
+   .topnav {
+   height:120%;
+   }
+   .colourpicker {
+   left:1%;
+   top:80%;
+   width:32%;
+   height: 7%;;
+   font-size: 1rem;
+   }
+   .dropdown {
+   right:35%;
+   top:75%;
+   height: 8%;;
+   width: 20%;
+   }
+   h2 {
+   font-size: 1.5rem;
+   }
+   #zoomin-btn{
+   width:17%;
+   left:20%;
+   top:100%;
+   height: 12%;
+   }
+   #zoomout-btn{
+   width:17%;
+   left:42%;
+   top:100%;
+   height:12%;
+   }
+   #zoomreset-btn{
+   width:17%;
+   top:100%;
+   height:12%;
+   }
+   .home {
+   top:400%;
+   }
+   #Serviceshome {
+   top:162%;
+   width:100%;
+   left:0;
+   height:32%;
+   }
+   #Marketing {
+   width: 100%;;
+   }
+   #Upgrade {
+   top:193%;
+   width:100%;
+   left:0;
+   font-size: 1.2rem;
+   }
+   #Services2 {
+   top:200%;
+   width:100%;
+   left:0;
+   height:30%;
+   }
+   #topquality {
+   top:230%;
+   width: 100%;
+   left:0;
+   font-size: 1.2rem;
+   }
+   #Services3 {
+      top:238%;
+      width:100%;
+      height:35%;
+      left:0;
+      }
+      #Services4 {
+      top:282%;
+      left:0;
+      width: 100%;
+      height:40%;
+      }
+      #team {
+      top:322%;
+      left:0;
+      width: 100%;
+      font-size: 1.2rem;
+      }
+      #SocialMedia {
+      top:273%;
+      width:100%;
+      left:0;
+      font-size: 1.2rem;
+      }
+      .title {
+      font-size: 3rem;
+      top:10%;
+      }
+      footer {
+      top:700%;
+      width:90%;
+      }
+      .card-info {
+      font-size: 1.2rem;
+      width:68%;
+      left:-15%;
+      top:15%;
+      }
+      .card-button {
+      left:27%;
+      }
+      .home {
+      top:470%;
+      }
+      .section2 {
+      top:100%;
+      }
+      #aboutus {
+      width: 70%;
+      left:7%;
+      height: 60%;
+      font-size: 1rem;
+      }
+      #aboutus2 {
+      width: 70%;
+      left:7%;
+      height: 60%;
+      font-size: 1rem;
+      }
+      .section3 {
+      top:250%;
+      }
+      #footerAU {
+      top:750%;
+      box-shadow: none;
+      }
+      #contactdetails {
+      width:70%;
+      height: 40%;
+      font-size: 1rem;
+   right:0;
+      }
+      #map {
+      width:100%;
+      border-radius: 10px;
+      height:50%;
+      }
+      .map {
+      left:-58%;
+      top:-35%;
+   
+      }
+      .socialbar {
+      width:80%;
+      height:20%;
+      margin: 1%;
+      left:9%;
+      top:72%;
+      }
+      .Man1 {
+      width:100%;
+      top:130%;
+      }
+      .Lady1 {
+      top:224%;
+      width: 100%;
+      left:0;
+      }
+      .Lady2 {
+         top:330%;
+         left:0;
+         width: 100%;
+         }
+         .Lady3{
+            top: 440%;
+            width: 100%;;
+            }
+            .Man2 {
+            top:550%;
+            width: 100%;
+            left:1%;
+            }
+            .Lady4  {
+               top:670%;
+               left:1%;
+               width:100%;
+               }
+               .Lady1:hover .worker-info {
+               top:110%;
+               height:60%;
+               font-size:1rem;
+               left:-1%;
+               }
+               .Man1:hover .worker-info {
+                  top:110%;
+                  height:60%;
+                  font-size:1rem;
+                  left: -1%;
+                  }
+                  .Man2:hover .worker-info {
+                     top:110%;
+                     height:60%;
+                     font-size:1rem;
+                     left: -1%;
+                     }
+               .Lady2:hover .worker-info {
+                  top:110%;
+                  height:60%;
+                  font-size: 1rem;
+                  }
+                  .Lady3:hover .worker-info {
+                     top:110%;
+                     height:60%;
+                     font-size: 1rem;
+                     left: -1%;
+                     }
+                     .Lady4:hover .worker-info {
+                        top:110%;
+                        height:60%;
+                        width:80%;
+                        font-size: 1rem;
+                        left:-1%;
+                        }
+      #footerMTT {
+      top:780%;
+      }
+      .coding {
+      top:140%;
+      width:20%;
+      height: 20%;
+      right:1%;
+      }
+      .brand {
+         top:140%;
+         width:22%;
+         height: 20%;
+         left:33%;
+         }
+         .socialmedia{
+            top:140%;
+            width:20%;
+            height: 20%;
+            left:1%;
+            }
+      #SocialMediaService {
+      font-size:0.8rem;
+      padding:0%;
+      top:60%;
+     left: 15%;;
+      }
+      #footerourservices {
+      top:320%;
+      width: 90%;
+      }
+   }
+   @media only screen and (max-height:667px){ /*Media query adjusting elements for short Iphone (e.g. SE)*/
+   .topnav {
+   height: 120%;;
+   }
+   .topnav button {
+   margin: 1%;;
+   }
+   .colourpicker {
+   top:85%;
+   font-size: 0.8rem;
+   height:4%;
+   };
+   #zoomin-btn {
+   top:200%;
+   }
+   }
+   @media only screen and (min-width:602px) and (max-width:1396px) { /*Media query adjusting elements for Tablet Device*/
+   h1 {
+   font-size: 2.5rem;
+   }
+   .topnav button{
+   width: 17%;;
+   font-size: 1rem;
+   margin: 1%;
+   }
+   .colourpicker {
+   font-size: 1rem;
+   right:1%;
+   width: 10%;
+   }
+   h2 {
+   font-size: 1rem;
+   }
+   .dropdown {
+   right:28%;
+   }
+   #zoomin-btn {
+      width:8%;
+      height: 10%;
+      top:0%;
+      left:1%;
+   }
+   #zoomout-btn {
+   width:8%;
+   height: 10%;
+   top:0%;
+   left:20%;
+   }
+   #zoomreset-btn {
+   width:8%;
+   height: 10%;
+   top:0%;
+   left:10.5%;
+   }
+   }
+   @media only screen and (min-width:602px) and (max-width:1295px) { /*Media query adjusting elements for Tablet Device*/
+   #Team {
+   height:30%;
+   }
+   #Serviceshome {
+    width:20%;
+    height: 20%;
+   }
+   #Services2 {
+   width:20%;
+   height: 20%;
+   }
+   #Services3 {
+      width:20%;
+      height: 20%;
+   }
+   #Services4 {
+      width:20%;
+      height: 20%;
+   }
+   #Upgrade {
+   top:70%;
+   }
+   #team {
+   top:70%;
+   }
+   #topquality {
+   top:100%;
+   }
+   #SocialMedia {
+   top:100%;
+   }
+   }
+   @media only screen and (min-width:755px) and (max-width:1366px) { /*Media query adjusting elements for Tablet Device*/
+   #Team{
+   height:30%;
+   }
+   #topcompany {
+   left:-450px;
+   font-size: 1.3rem;
+   top:80%;
+   }
+   .colourpicker {
+   top:31%;
+   left:1%;
+   width: 30%;;
+   height: 2.5%;
+   box-shadow: 2px 2px 2px 2px black;
+   }
+   h2 {
+   font-size: 1.5rem;
+   }
+   .dropdown {
+   top:-3%;
+   }
+   }
+   /*@media only screen and (min-width:600px) and (max-width:755px) { 
